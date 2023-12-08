@@ -21,7 +21,7 @@
 
 -------------------
 
-## Metroid Fusion Redux
+## Metroid Zero Mission Redux
 
 “Metroid Zero Mission Redux” is a personal hack of "Metroid Zero Mission (U)" that has a few QoL features ported over from other QoL hacks available on the Metroid Construction website, more specifically, this is based on ["Project ZM" v0.83 by FelixWright/Ckosmic](https://forum.metroidconstruction.com/index.php/topic,4879.0.html), with some further modifications and improvements thrown in from other Zero Mission hacks.
 
@@ -149,7 +149,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 Metroid Zero Mission Redux is a project licensed under the terms of the GPLv3, which means that you are given legal permission to copy, distribute and/or modify this project, as long as:
 
 1. The source for the available modified project is shared and also available to the public without exception.
-2. The modified project subjects itself different naming convention, to differentiate it from the main and licensed Metroid Fusion Redux project.
+2. The modified project subjects itself different naming convention, to differentiate it from the main and licensed Metroid Zero Mission Redux project.
 
 You can find a copy of the license in the LICENSE file.
 
