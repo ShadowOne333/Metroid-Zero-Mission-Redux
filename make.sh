@@ -5,12 +5,14 @@
 export	time=$(date +'%T %a %d/%b/%Y')
 export	armips=bin/armips
 export	flips=bin/flips
-export	file_base=Metroid-Zero-Mission-Redux
+export	file_base="Metroid Zero Mission Redux"
 export  out_folder=out
 export	patches_folder=patches
 export  clean_rom=rom/MZM.gba
+export	mod_rom=out/PZM.gba
 export  patched_rom=$out_folder/$file_base.gba
 export  asm_file=code/main.asm
+export	unkItems=code/UnkItems.asm
 export	checksum=5de8536afe1f0078ee6fe1089f890e8c7aa0a6e8
 
 #-------------------------------------------------------------
@@ -23,19 +25,8 @@ Help()
    echo "Syntax: make.sh [option]"
    echo "Options:"
    echo "	-h, --help	Prints this menu."
-   #echo "	-o, --original	Original GFX menu (requires -r, -t, -g, -s or -c as additional argument)."
-   #echo "	-t, --retrans	Retranslation scrit (requires -r, -o, -g, -s or -c as additional argument)."
-   echo "	-r, --redux	Compiles default Redux (New GFX)."
-   #echo "	-g, --green	Compiles Redux with Green Agahnim GFX."
-   #echo "	-s, --subtitle	Compiles Redux with 'Triforce of the Gods' subtitle."
-   #echo "	-c, --combine	Compiles Redux with the combined Green Agahnim and Subtitle."
-   #echo
-   #echo	"* To compile normal Redux (New GFX) with one of the graphical patches, use only one of the standalone syntaxes."
-   #echo	"	Normal Redux:	Redux+Green Agahnim:	Redux+Subtitle:	Redux+Green Agahnim+Subtitle
-	#./make.sh -r	./make.sh -g		./make.sh -s		./make.sh -c"
-   #echo "* For Original GFX with one of the graphical patches, use the '-o' argument before the graphics you want"
-   #echo	"	Original GFX Redux:	OG GFX Redux+Green Agahnim:	OG GFX Redux+Subtitle:	OG GFX Redux+Green Agahnim+Subtitle:
-	#./make.sh -o -r		./make.sh -o -g			./make.sh -o -s			./make.sh -o -c"
+   echo "	-r, --redux	Compiles default Zero Mission Redux."
+   echo "	-u, --unknown	Compiles Redux with Unknown Items activated upon obtaining them."
 }
 
 #-------------------------------------------------------------
@@ -86,22 +77,26 @@ Start()
 
 #-------------------------------------------------------------
 # Copy clean ROM into a base used for patching to keep clean ROM intact
-	cp "$clean_rom" "$patched_rom"
+	cp "$clean_rom" "$mod_rom"
 
 #-------------------------------------------------------------
 # Compile the main assembly code
 
 	# Patch Project ZM Mod IPS for initialization
 	echo "Patching 'Project ZM Mod' hack...";
-	$flips -a "code/patch/PZM-Mod.ips" "$clean_rom"
+	$flips -a "code/ProjectZM/PZM-Mod.ips" "$mod_rom";
+	echo
 
 	echo "Beginning main assembly code compilation with Armips..."; echo
 	$armips $asm_file	# Main code
-
+	# Check if UnkItems was selected
+	if [ "$items" == "UnkItems" ]; then
+		$armips $unkItems	# UnkItems code
+	fi
 	echo "Main assembly code compilation succeded!"; echo
 
 	# Create IPS
-	echo "Creating $file_base.ips patch...";
+	echo "Creating '$file_base.ips' patch...";
 	$flips -c -i "$clean_rom" "$patched_rom" "$patches_folder/$file_base.ips"
 
 
@@ -127,8 +122,12 @@ End()
 		rm $clean_rom
 	fi
 
-	cp "patches/$file_base.ips" "patches/Metroid Zero Mission Redux.ips"
-	rm "patches/$file_base.ips"
+	if [ -f "$mod_rom" ]; then
+		rm $mod_rom
+	fi
+
+	#cp "patches/$file_base.ips" "patches/Metroid Zero Mission Redux.ips"
+	#rm "patches/$file_base.ips"
 
 	sleep 1
 	exit
@@ -143,60 +142,22 @@ else
 	#while getopts "horgsc" option; do
 	#case $option in
 
-	# Force default settings at startup
-	#sed -i 's/!newgfx = 0/!newgfx = 1/g' $asm_file
-	#sed -i 's/!subtitle = 1/!subtitle = 0/g' $asm_file
-	#sed -i 's/!retranslation = 1/!retranslation = 0/g' $asm_file
-
 	while [ ! -z "$1" ]; do
-
-		# Check if Redux is used alongside Green, Subtitle or Combined
-		if [[ ( "$@" == *[r]* ) && ( "$@" == *[g]* || "$@" == *[s]* || "$@" == *[c]* ) ]]; then
-			export error="Don't combine -r with -g/-s/-c!"
-			Error;
-			echo "Use -g, -s or -c by themselves, and/or with either -o or -t instead."; echo
-			End;
-		fi
-
-		# Check if Green or Subtitle is used alongside Combined
-		if [[ (( "$@" == *[g]* || "$@" == *[s]* ) && ( "$@" == *[c]* )) || ("$@" == *[g]* && "$@" == *[s]*)]]; then
-			export error="Don't combine -g/-s with themselves, nor with -c!"
-			Error;
-			echo "If you want Green Agahnim + Subtitle, use -c alone instead."; echo
-			End;
-		fi
-
-		# Check each argument do determine action
+	# Check each argument do determine action
 		case "$1" in
-		--help|-h) # Display Help
+		--help|-h)	# Display Help
 			Help
 			exit;;
-		--retrans|-t) # Retranslation Redux script
-			export script='Retranslation'
-			sed -i 's/!retranslation = 0/!retranslation = 1/g' $asm_file ;;
-		--original|-o) # Default Redux with Original GFX
-			export org='original/Original-'	
-			sed -i 's/!newgfx = 1/!newgfx = 0/g' $asm_file ;;
-		--redux|-r) # Default Redux with New GFX
+		--redux|-r)	# Default Zero Mission Redux
 			shift
-			export graphics='Redux'
+			export items='Redux'
 			Start;;
-		--green|-g) # Redux with Green Agahnim
+		--unknown|-u)	# Redux with Unknown Items
 			shift
-			export graphics='GreenAgahnim'
+			export items='UnkItems'
 			Start;;
-		--subtitle|-s) # Redux with Triforce of the Gods subtitle
-			shift
-			export graphics='Subtitle'
-			sed -i 's/!subtitle = 0/!subtitle = 1/g' $asm_file
-			Start;;
-		--combine|-c) # Redux with Green Agahnim and Subtitle
-			shift
-			export graphics='AgahnimSubtitle'
-			sed -i 's/!subtitle = 0/!subtitle = 1/g' $asm_file
-			Start;;
-		#\?) # Invalid option
-		*) # Invalid option
+		#\?)	# Invalid option
+		*)	# Invalid option
 			echo "Error: Invalid option '$1'"
 			Help
 			exit;;

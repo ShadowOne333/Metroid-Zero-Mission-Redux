@@ -1,5 +1,5 @@
 .gba
-.open "../rom/MZM.gba","../out/Metroid Zero Mission Redux.gba",0x8000000
+.open "out/PZM.gba","out/Metroid Zero Mission Redux.gba",0x8000000
 
 .include "code/BetterMorphRoll.asm"
 .include "code/DessgeegaSidehopperFix.asm"
