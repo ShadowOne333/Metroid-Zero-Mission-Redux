@@ -1,5 +1,5 @@
 .gba
-.open "zm.gba","HazardDamageSuit.gba",0x8000000
+;.open "zm.gba","HazardDamageSuit.gba",0x8000000
 
 .org 0x80067C6
 	mov r0,30h
@@ -83,5 +83,5 @@ ReturnGravity:
 	mov r14,r0
 Return:
 	bx r14
-	
-.close
+
+;.close

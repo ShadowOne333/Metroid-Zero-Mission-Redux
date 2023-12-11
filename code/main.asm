@@ -7,5 +7,6 @@
 .include "code/Fundamentals.asm"
 .include "code/KraidPlasmaDamage.asm"
 .include "code/misc.asm"
+;.include "optional/low_health_alarm.asm"
 
 .close

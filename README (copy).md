@@ -72,8 +72,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 
 1. Reimplement the Introduction's closeup of Samus' face when starting the game (originally seen when starting in Brinstar. This was removed due to the starting location being changed to Crateria in Project ZM.
 2. There might be other things that might be added, but it's still uncertain whether or not I'd want to do more, since that's the only thing missing in Zero Mission for me to make it perfect.
-3. Include the "Hazard Damage Suit" and "Ledge Vault" codes from "addons" properly into Redux.
-4. Possibly more optional patches.
+3. Possibly more optional patches.
 
 -------------------
 

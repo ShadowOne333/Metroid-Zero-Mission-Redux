@@ -1,5 +1,5 @@
 .gba
-.open "ZM_U.gba","LedgeVault.gba",0x8000000
+;.open "ZM_U.gba","LedgeVault.gba",0x8000000
 
 .definelabel FreeSpace,filesize("ZM_U.gba") + 0x8000000
 
@@ -211,4 +211,4 @@ CallR0:
 CallR2:
     mov pc,r2
 
-.close
+;.close
