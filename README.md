@@ -63,8 +63,6 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 ## Optional patches
 
 1. **Disable Low Health Alarm** - Self-explanatory. Disables the alarm that you get when Samus is on low health
-2. **Normal Beam Chargeable** - Allows the small Normal beam to be chargeable
-3. **Permanent Debug Menu** - Enable the Debug menu In-Game. This replaces the Status screen for Samus.
 
 -------------------
 
@@ -154,3 +152,4 @@ Metroid Zero Mission Redux is a project licensed under the terms of the GPLv3, w
 
 You can find a copy of the license in the LICENSE file.
 
+-------------------

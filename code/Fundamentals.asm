@@ -529,7 +529,7 @@ EndOfTwoLineMessageIDs:
 	b   0x805CA52
 
 ;.org 0x805CA1A ; skips setting events 0x13 (varia obtained) and 0x44 (varia skipped)
-;  b  0x805CA36
+	;b  0x805CA36
 
 ;.org 80600d8h
 	;add r1,10h

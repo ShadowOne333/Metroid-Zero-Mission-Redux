@@ -1,7 +1,7 @@
 .gba
 ;.open "ZM_U.gba","LedgeVault.gba",0x8000000
 
-.definelabel FreeSpace,filesize("ZM_U.gba") + 0x8000000
+;.definelabel FreeSpace,filesize("ZM_U.gba") + 0x8000000
 
 .definelabel SamusDataCopy,0x30013F4
 .definelabel SamusEquipment,0x3001530

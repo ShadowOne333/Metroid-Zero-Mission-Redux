@@ -3,3 +3,6 @@ out/*.gba
 rom/*.gba
 *.gba
 *.sav
+*.ss1
+*.ss2
+*.bak

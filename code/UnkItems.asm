@@ -47,7 +47,7 @@ o7 thank you friends. you are the reason cool stuff like this exists
 ;01 = Full Powered Suit
 ;02 = Zero Suit
 
-.definelabel StartingSuitType,			0x1	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
+.definelabel StartingSuitType,			0x0	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
 .definelabel StartingSuitMisc,			0x0
 .definelabel StartingBeamBombs,			0x0
 
@@ -529,7 +529,7 @@ EndOfTwoLineMessageIDs:
 	b   0x805CA52
 
 ;.org 0x805CA1A ; skips setting events 0x13 (varia obtained) and 0x44 (varia skipped)
-;  b  0x805CA36
+	b  0x805CA36
 
 ;.org 80600d8h
 	;add r1,10h
@@ -660,10 +660,10 @@ EquipmentGet:
 	strb	r1,[r2,0Eh]
 	ldrb	r1,[r2,0Fh]
 ;uncomment if not using Obtain Unknown Items
-;	mov		r3,24h		;checks for space jump or grav and prevents their activation
-;	and		r3,r1
-;	cmp		r3,0h
-;	bne		@@Return
+	mov		r3,24h		;checks for space jump or grav and prevents their activation
+	and		r3,r1
+	cmp		r3,0h
+	bne		@@Return
 	orr		r0,r1
 	strb	r0,[r2,0Fh]
 @@Return:
@@ -674,10 +674,10 @@ BeamGet:
 	strb	r1,[r2,0Ch]
 	ldrb	r1,[r2,0Dh]
 ;uncomment if not using Obtain Unknown Items
-;	mov		r3,8h		;checks for plasma and prevents its activation
-;	and		r3,r1
-;	cmp		r3,0h
-;	bne		@@Return
+	mov		r3,8h		;checks for plasma and prevents its activation
+	and		r3,r1
+	cmp		r3,0h
+	bne		@@Return
 	orr		r0,r1
 	strb	r0,[r2,0Dh]
 @@Return:

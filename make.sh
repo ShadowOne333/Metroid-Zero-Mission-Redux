@@ -12,7 +12,6 @@ export  clean_rom=rom/MZM.gba
 export	mod_rom=out/PZM.gba
 export  patched_rom=$out_folder/$file_base.gba
 export  asm_file=code/main.asm
-export	unkItems=code/UnkItems.asm
 export	checksum=5de8536afe1f0078ee6fe1089f890e8c7aa0a6e8
 
 #-------------------------------------------------------------
@@ -88,11 +87,18 @@ Start()
 	echo
 
 	echo "Beginning main assembly code compilation with Armips..."; echo
-	$armips $asm_file	# Main code
+
 	# Check if UnkItems was selected
 	if [ "$items" == "UnkItems" ]; then
-		$armips $unkItems	# UnkItems code
+		sed -i 's%\t.include "code/Fundamentals.asm"%\t;.include "code/Fundamentals.asm"%g' $asm_file
+		sed -i 's%\t;.include "code/UnkItems.asm"%\t.include "code/UnkItems.asm"%g' $asm_file
+	else [ "$items" == "Redux" ]
+		sed -i 's%\t;.include "code/Fundamentals.asm"%\t.include "code/Fundamentals.asm"%g' $asm_file
+		sed -i 's%\t.include "code/UnkItems.asm"%\t;.include "code/UnkItems.asm"%g' $asm_file
 	fi
+
+	# Compile the main assembly file with the proper option
+	$armips $asm_file	# Main code
 	echo "Main assembly code compilation succeded!"; echo
 
 	# Create IPS

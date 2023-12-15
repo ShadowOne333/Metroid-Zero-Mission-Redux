@@ -36,8 +36,9 @@ NextHazardVaria:
 NoVaria:
 	bl FreeSpace
 
-.org 0x8304054	;Unused Crocomire Gfx
-FreeSpace:
+;.org 0x8304054	;Unused Crocomire Gfx
+;FreeSpace:
+.org Freespace
 	cmp r0,20h	;if gravity
 	bne Return
 	cmp r2,4h	;strong acid
