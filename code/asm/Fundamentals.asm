@@ -47,7 +47,7 @@ o7 thank you friends. you are the reason cool stuff like this exists
 ;01 = Full Powered Suit
 ;02 = Zero Suit
 
-.definelabel StartingSuitType,			0x0	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
+.definelabel StartingSuitType,			0x1	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
 .definelabel StartingSuitMisc,			0x0
 .definelabel StartingBeamBombs,			0x0
 
@@ -529,7 +529,7 @@ EndOfTwoLineMessageIDs:
 	b   0x805CA52
 
 ;.org 0x805CA1A ; skips setting events 0x13 (varia obtained) and 0x44 (varia skipped)
-  b  0x805CA36
+	;b  0x805CA36
 
 ;.org 80600d8h
 	;add r1,10h
@@ -549,66 +549,66 @@ EndOfTwoLineMessageIDs:
 ; Text
 ;------
 	
-;.org 0x844284C		; Plasma Beam
-;	.halfword 0x804E,0x8105,0x90,0xCC,0xC1,0xD3,0xCD,0xC1,0x40,0x82,0xC5,0xC1,0xCD,0xFE00,0x806E,0xFF00
+.org 0x844284C		; Plasma Beam
+	.halfword 0x804E,0x8105,0x90,0xCC,0xC1,0xD3,0xCD,0xC1,0x40,0x82,0xC5,0xC1,0xCD,0xFE00,0x806E,0xFF00
 	
-;.org 0x844289E		; Gravity Suit
-;	.halfword 0x8050,0x8105,0x87,0xD2,0xC1,0xD6,0xC9,0xD4,0xD9,0x40,0x93,0xD5,0xC9,0xD4,0xFE00,0x806E,0xFF00
+.org 0x844289E		; Gravity Suit
+	.halfword 0x8050,0x8105,0x87,0xD2,0xC1,0xD6,0xC9,0xD4,0xD9,0x40,0x93,0xD5,0xC9,0xD4,0xFE00,0x806E,0xFF00
 	
-;.org 0x844293C		; Space Jump
-;	.halfword 0x804E,0x8105,0x93,0xD0,0xC1,0xC3,0xC5,0x40,0x8A,0xD5,0xCD,0xD0,0xFE00,0x806E,0xFF00
+.org 0x844293C		; Space Jump
+	.halfword 0x804E,0x8105,0x93,0xD0,0xC1,0xC3,0xC5,0x40,0x8A,0xD5,0xCD,0xD0,0xFE00,0x806E,0xFF00
 	
-;.org 0x8442D22		; Unknown Item
-;	.halfword 0x804A,0x8105,0x0095,0x00CE,0x00CB,0x00CE,0x00CF,0x00D7,0x00CE,0x0040,0x0089,0x00D4,0x00C5,0x00CD,0xFE00,0x806E,0xFF00
+.org 0x8442D22		; Unknown Item
+	.halfword 0x804A,0x8105,0x0095,0x00CE,0x00CB,0x00CE,0x00CF,0x00D7,0x00CE,0x0040,0x0089,0x00D4,0x00C5,0x00CD,0xFE00,0x806E,0xFF00
 
 ;---------
 ; Statues
 ;---------
 ; replace chozo statue gfx
-;.org 0x82C15F0
-;	.import "code/fundamentals/gravity.gfx.lz"
-;.org 0x82C2B24
-;	.import "code/fundamentals/gravity_item.palette"
+.org 0x82C15F0
+	.import "code/fundamentals/gravity.gfx.lz"
+.org 0x82C2B24
+	.import "code/fundamentals/gravity_item.palette"
 
-;.org 0x82BF534
-;	.import "code/fundamentals/space.gfx.lz"
-;.org 0x82C0A58
-;	.import "code/fundamentals/space_item.palette"
+.org 0x82BF534
+	.import "code/fundamentals/space.gfx.lz"
+.org 0x82C0A58
+	.import "code/fundamentals/space_item.palette"
 
-;.org 0x82C2BC4
-;	.import "code/fundamentals/plasma.gfx.lz"
-;.org 0x82C40F4
-;	.import "code/fundamentals/plasma_item.palette"
+.org 0x82C2BC4
+	.import "code/fundamentals/plasma.gfx.lz"
+.org 0x82C40F4
+	.import "code/fundamentals/plasma_item.palette"
 
 ; change secondary sprites
 .org 0x801528A
-	mov	 r0,1
+	mov	r0,1
 .org 0x80152AE
-	mov	 r0,1
+	mov	r0,1
 .org 0x80152D0
-	mov	 r0,1
+	mov	r0,1
 .org 0x80152EC
-	mov	 r0,1
+	mov	r0,1
 
 ; change chozo statue OAM
-;.org 0x8015114
-;	.word 0x875F4E4	
+.org 0x8015114
+	.word 0x875F4E4	
 
 ; change ability OAM
 ; opening
-;.org 0x80163D4
-;	.word 0x82B5890
-;.org 0x80163E4
-;	.word 0x82B5890
-;.org 0x80163F4
-;	.word 0x82B5890
+.org 0x80163D4
+	.word 0x82B5890
+.org 0x80163E4
+	.word 0x82B5890
+.org 0x80163F4
+	.word 0x82B5890
 ; opened
-;.org 0x8016438
-;	.word 0x82B58B0
-;.org 0x8016448
-;	.word 0x82B58B0
-;.org 0x8016458
-;	.word 0x82B58B0
+.org 0x8016438
+	.word 0x82B58B0
+.org 0x8016448
+	.word 0x82B58B0
+.org 0x8016458
+	.word 0x82B58B0
 
 
 ;---------
@@ -620,66 +620,68 @@ EndOfTwoLineMessageIDs:
 ;SCALE END PERCENT
 ScaleNumber:
 ; r0 = obtained percent
-	mov	 r1,0x64			; 100
-	mul	 r1,r0
-	mov	 r0,0
-	mov	 r2,MaxPercent
+	mov	r1,0x64			; 100
+	mul	r1,r0
+	mov	r0,0
+	mov	r2,MaxPercent
 @@Divide:
-	cmp	 r1,MaxPercent
-	blt	 @@Return
-	sub	 r1,r1,r2
-	add	 r0,1
-	b	   @@Divide
+	cmp	r1,MaxPercent
+	blt	@@Return
+	sub	r1,r1,r2
+	add	r0,1
+	b	@@Divide
 @@Return:
-	bx	  r14
+	bx	r14
 	
 FixCalcPercent:
 	push	r14
 	; hijacked code
-	add	 r0,r8
-	add	 r0,r0,r7		; r0 = obtained percent
-	bl	  ScaleNumber
-	pop	 r1
-	bx	  r1
+	add	r0,r8
+	add	r0,r0,r7		; r0 = obtained percent
+	bl	ScaleNumber
+	pop	r1
+	bx	r1
 	
 FixDisplayedPercent:
 	push	r14
 	; hijacked code
-	add	 r0,0x99
+	add	r0,0x99
 	; swap registers
-	mov	 r1,r0
-	mov	 r0,r5			; r0 = obtained percent
-	mov	 r5,r1
-	bl	  ScaleNumber
+	mov	r1,r0
+	mov	r0,r5			; r0 = obtained percent
+	mov	r5,r1
+	bl	ScaleNumber
 	strb	r0,[r5]			; stores percent to 300175D
-	pop	 r0
-	bx	  r0
+	pop	r0
+	bx	r0
 	
 EquipmentGet:
-	orr		r1,r0
+	orr	r1,r0
 	strb	r1,[r2,0Eh]
 	ldrb	r1,[r2,0Fh]
 ;uncomment if not using Obtain Unknown Items
-	cmp		r0,20h		;checks for grav and prevents its activation
-	beq		@@Return
-	cmp		r0,4h		;checks for space jump prevents its activation
-	beq		@@Return
-	orr		r0,r1
+;	mov	r3,24h		;checks for space jump or grav and prevents their activation
+;	and	r3,r1
+;	cmp	r3,0h
+;	bne	@@Return
+	orr	r0,r1
 	strb	r0,[r2,0Fh]
 @@Return:
-	bx		r14
+	bx	r14
 	
 BeamGet:
-	orr		r1,r0
+	orr	r1,r0
 	strb	r1,[r2,0Ch]
 	ldrb	r1,[r2,0Dh]
 ;uncomment if not using Obtain Unknown Items
-	cmp		r0,8h		;checks for plasma and prevents its activation
-	beq		@@Return
-	orr		r0,r1
+;	mov	r3,8h		;checks for plasma and prevents its activation
+;	and	r3,r1
+;	cmp	r3,0h
+;	bne	@@Return
+	orr	r0,r1
 	strb	r0,[r2,0Dh]
 @@Return:
-	bx		r14
+	bx	r14
 .endarea
 
 ;----------
@@ -698,127 +700,127 @@ DrawPickupWrapper:
 .pool
 
 ;UNKNOWN ITEMS
-; StartFullSuit:
-	; strh	r0,[r1]
-	; strh	r0,[r1,6]
-	; mov	 r0,1
-	; strb	r0,[r1,0x12]
-	; bx	  r14
+;StartFullSuit:
+	;strh	r0,[r1]
+	;strh	r0,[r1,6]
+	;mov	r0,1
+	;strb	r0,[r1,0x12]
+	;bx	r14
 
 ChangeSuit:
-	ldr	 r6,=Equipment
+	ldr	r6,=Equipment
 	ldrb	r0,[r6,0x12]
 	push	r0
-	cmp	 r0,1
-	bne	 @@Return
+	cmp	r0,1
+	bne	@@Return
 	; if full suit
 ; Default -- If full suit and not have BigSuit = 0x10 for Varia, or 0x20 for Gravity
 	ldrb	r0,[r6,0xF]
-	mov	 r1,BigSuit
-	and	 r0,r1
-	cmp	 r0,0
-	bne	 @@Return
-	mov	 r0,0h
+	mov	r1,BigSuit
+	and	r0,r1
+	cmp	r0,0
+	bne	@@Return
+	mov	r0,0h
 	strb	r0,[r6,0x12]
 ; Changed code -- If full suit and not have Bigsuit = 0x30 (Gravity + Varia)
-	; ldrb	r0,[r6,0xF]
-	; mov	 r1,BigSuit
-	; and	 r0,r1
-	; cmp	 r0,r1
-	; beq	 @@Return
-	; mov		r0,0h	
-	; strb	r0,[r6,0x12]
+	;ldrb	r0,[r6,0xF]
+	;mov	r1,BigSuit
+	;and	r0,r1
+	;cmp	r0,r1
+	;beq	@@Return
+	;mov	r0,0h	
+	;strb	r0,[r6,0x12]
 @@Return:
-	add	 sp,-4h
-	bx	  r14
+	add	sp,-4h
+	bx	r14
 	.pool
 	
 RestoreSuit:
-	add	 sp,4h
-	pop	 r0
-	ldr	 r1,=Equipment
+	add	sp,4h
+	pop	r0
+	ldr	r1,=Equipment
 	strb	r0,[r1,0x12]
-	pop	 r3-r5
-	bx	  r14
+	pop	r3-r5
+	bx	r14
 	.pool
 
 StatusScreen:
-	ldr	 r0,=Equipment
+	ldr	r0,=Equipment
 	ldrb	r2,[r0,0x12]
-	cmp	 r2,2
-	beq	 @@Return		; return r2 = 2 if suitless
+	cmp	r2,2
+	beq	@@Return		; return r2 = 2 if suitless
 	ldrb	r2,[r0,0xF]
 ; Default code -- If have BigSuit = 0x10 for Varia, or 0x20 for Gravity
-	mov	 r1,BigSuit
-	and	 r2,r1
-	cmp	 r2,0
-	beq	 @@Return		; return r2 = 0 if no gravity
-	mov	 r2,1			; return r2 = 1 if gravity 
+	mov	r1,BigSuit
+	and	r2,r1
+	cmp	r2,0
+	beq	@@Return		; return r2 = 0 if no gravity
+	mov	r2,1			; return r2 = 1 if gravity 
 ; Changed code -- If have Bigsuit = 0x30 (Gravity + Varia)
-	; mov	 r1,BigSuit
-	; and	 r2,r1
-	; cmp	 r2,r1
-	; bne	 @@Return		; return r2 = 0 if not gravity + varia
-	; mov	 r2,1			; return r2 = 1 if gravity + varia
+	;mov	r1,BigSuit
+	;and	r2,r1
+	;cmp	r2,r1
+	;bne	@@Return		; return r2 = 0 if not gravity + varia
+	;mov	r2,1			; return r2 = 1 if gravity + varia
 @@Return:
-	bx	  r14
+	bx	r14
 	.pool
 
 SwitchText:
 	push	r14
 	; check for full suit
-	ldr	 r0,=Equipment
+	ldr	r0,=Equipment
 	ldrb	r0,[r0,0x12]
-	cmp	 r0,1
-	beq	 @@ReplacedCode
+	cmp	r0,1
+	beq	@@ReplacedCode
 	; check if unknown item
-	mov	 r0,r8
-	cmp	 r0,0xC
-	beq	 @@IsUnknown
-	cmp	 r0,0xF
-	beq	 @@IsUnknown
-	cmp	 r0,0x14
-	bne	 @@ReplacedCode
+	mov	r0,r8
+	cmp	r0,0xC
+	beq	@@IsUnknown
+	cmp	r0,0xF
+	beq	@@IsUnknown
+	cmp	r0,0x14
+	bne	@@ReplacedCode
 @@IsUnknown:
-	ldr	 r0,=MessageInfo
+	ldr	r0,=MessageInfo
 	ldrb	r1,[r0,0xC]
-	cmp	 r1,2
-	bne	 @@ReplacedCode
-	mov	 r1,0x23
+	cmp	r1,2
+	bne	@@ReplacedCode
+	mov	r1,0x23
 	strb	r1,[r0,0xA]
 @@ReplacedCode:
-	bl	  0x806F28C
-	ldr	 r1,=MessageInfo
-	mov	 r2,r8
+	bl	0x806F28C
+	ldr	r1,=MessageInfo
+	mov	r2,r8
 	strb	r2,[r1,0xA]
-	pop	 r1
-	bx	  r1
+	pop	r1
+	bx	r1
 	.pool
 
 GetJingleNumber:
-	ldr	 r0,=Equipment
+	ldr	r0,=Equipment
 	ldrb	r0,[r0,0x12]
-	cmp	 r0,1
-	beq	 @@FullSuit
-	mov	 r0,0x42
-	b	   @@Return
+	cmp	r0,1
+	beq	@@FullSuit
+	mov	r0,0x42
+	b	@@Return
 @@FullSuit:
-	mov	 r0,0x37
+	mov	r0,0x37
 @@Return:
-	bx	  r14
+	bx	r14
 	.pool
 
 GetSoundNumber:
-	ldr	 r0,=Equipment
+	ldr	r0,=Equipment
 	ldrb	r0,[r0,0x12]
-	cmp	 r0,1
-	beq	 @@FullSuit
-	ldr	 r0,=0x20F
-	b	   @@Return
+	cmp	r0,1
+	beq	@@FullSuit
+	ldr	r0,=0x20F
+	b	@@Return
 @@FullSuit:
-	ldr	 r0,=0x1F7
+	ldr	r0,=0x1F7
 @@Return:
-	bx	  r14
+	bx	r14
 	.pool
 .endarea
 
@@ -829,47 +831,47 @@ GetSoundNumber:
 DrawPickup:
 	push 	r14
 	push	r2-r6
-	ldr		r0,=ChargeCounter
+	ldr	r0,=ChargeCounter
 	ldrb	r0,[r0]
-	cmp		r0,0x20
-	bcc		@@Return
-	sub		r0,0x1f
-	lsr		r5,r0,0x1			; scaling speed
-	mov		r5,r0
+	cmp	r0,0x20
+	bcc	@@Return
+	sub	r0,0x1f
+	lsr	r5,r0,0x1		; scaling speed
+	mov	r5,r0
 
-	ldr		r0,=ArmPosition
-	ldrh	r2,[r0]				; r2 = arm Y position
-	ldr		r0,=SamusData
+	ldr	r0,=ArmPosition
+	ldrh	r2,[r0]			; r2 = arm Y position
+	ldr	r0,=SamusData
 	ldrh	r1,[r0,0x12]		; r1 = Sam's X position
-	ldr		r0,=CurrSpriteData
-	ldrh	r3,[r0,0x4]			; r3 = sprite X position
-	ldrh	r4,[r0,0x2]			; r4 = sprite Y position
-	add		r0,0x1
-	sub		r1,r3,r1			; x
-	sub		r0,r4,r2			; y
+	ldr	r0,=CurrSpriteData
+	ldrh	r3,[r0,0x4]		; r3 = sprite X position
+	ldrh	r4,[r0,0x2]		; r4 = sprite Y position
+	add	r0,0x1
+	sub	r1,r3,r1		; x
+	sub	r0,r4,r2		; y
 	
 	bl	sinecosine
-	mov		r2,r5
-	mul		r0,r2				; apply speed scalar
-	mul		r1,r2
-	asr		r0,r0,0x10
-	asr		r1,r1,0x10
-	ldr		r3,=CurrSpriteData
-	ldrh	r2,[r3,0x2]			; add y speed to position
-	sub		r0,r2,r0
+	mov	r2,r5
+	mul	r0,r2			; apply speed scalar
+	mul	r1,r2
+	asr	r0,r0,0x10
+	asr	r1,r1,0x10
+	ldr	r3,=CurrSpriteData
+	ldrh	r2,[r3,0x2]		; add y speed to position
+	sub	r0,r2,r0
 	strh	r0,[r3,0x2]
 	
 	ldrh	r2,[r3,0x4]
-	sub		r1,r2,r1			; add x speed to position
+	sub	r1,r2,r1		; add x speed to position
 	strh	r1,[r3,0x4]
 		
 @@Return:
-	pop	 r2-r6
-	pop		r1
+	pop	r2-r6
+	pop	r1
 	; replaced instructions
-	ldr	 r0,=CurrSpriteData
-	add	 r0,0x24
-	bx	  r1
+	ldr	r0,=CurrSpriteData
+	add	r0,0x24
+	bx	r1
 	.pool
 .endarea
 ;---------
@@ -886,42 +888,42 @@ MyWrapperR1:
 
 sinecosine:
 	push	r14
-	lsl		r0,r0,0x10
-	asr		r0,r0,0x10
-	lsl		r1,r1,0x10
-	asr		r1,r1,0x10
-	mov		r3,r0
-	mov		r4,r1
+	lsl	r0,r0,0x10
+	asr	r0,r0,0x10
+	lsl	r1,r1,0x10
+	asr	r1,r1,0x10
+	mov	r3,r0
+	mov	r4,r1
 	
-	mov		r1,r3
-	mul		r1,r3
-	mov		r2,r4
-	mul		r2,r4
-	add		r0,r1,r2
+	mov	r1,r3
+	mul	r1,r3
+	mov	r2,r4
+	mul	r2,r4
+	add	r0,r1,r2
 	push	r3
-	ldr		r1,=0x80051C8+1		; load square root
-	bl		MyWrapperR1
-	pop		r3
-	mov		r2,r0
-	mov		r1,r0 				; divisor
-	mov		r0,r3 				; dividend
-	lsl		r0,r0,0x10
-	ldr		r3,=0x808AC34 		; divide 0x1000 times r0 or r1
+	ldr	r1,=0x80051C8+1		; load square root
+	bl	MyWrapperR1
+	pop	r3
+	mov	r2,r0
+	mov	r1,r0 			; divisor
+	mov	r0,r3 			; dividend
+	lsl	r0,r0,0x10
+	ldr	r3,=0x808AC34 		; divide 0x1000 times r0 or r1
 	push	r2
-	bl		WrapperR3
-	pop		r2
-	mov		r1,r2 				; divisor
-	mov		r2,r0
-	mov		r0,r4				; dividend
-	lsl		r0,r0,0x10
-	ldr		r3,=0x808AC34		; divide 0x1000 times r0 or r1 
+	bl	WrapperR3
+	pop	r2
+	mov	r1,r2 			; divisor
+	mov	r2,r0
+	mov	r0,r4			; dividend
+	lsl	r0,r0,0x10
+	ldr	r3,=0x808AC34		; divide 0x1000 times r0 or r1 
 	push	r2
-	bl		WrapperR3
-	pop		r2
-	mov		r4,r0
-	mov		r0,r2
-	mov		r1,r4
-	pop		r15
+	bl	WrapperR3
+	pop	r2
+	mov	r4,r0
+	mov	r0,r2
+	mov	r1,r4
+	pop	r15
 .pool
 .endarea
 ;---------
@@ -929,32 +931,32 @@ sinecosine:
 .area 0x60
 ; START WITH ITEMS
 StartWithItems:
-	ldr r5,=Equipment			   ;Samus equipment
-	mov r6,StartingSuitMisc		   ;Change X to any combinations of values according to the Suit/Misc table above. For example, 60h gives you Gravity and morphball
-	strb r6,[r5,0Eh]			   ;Stores X to aquired Suit/Misc Items
-	strb r6,[r5,0Fh]			   ;Stores X to equipped Suit/Misc Items
-	mov r6,StartingBeamBombs	   ;Change Y to any combination of values according to the Beams/Bombs table. For example, 98h gives you Bombs, Charge Beam , and Plasma
-	strb r6,[r5,0Ch]			   ;Stores Y to aquired Beams/Bombs
-	strb r6,[r5,0Dh]			   ;Stores Y to equipped Beams/Bombs
-	mov r6,StartingMissiles		   ;Change Z to the number of missiles you'd like to start with. For example, 0Ah is 10 missiles.
-	strh r6,[r5,2h]				   ;Stores Z to max Missiles
-	strh r6,[r5,8h]				   ;Stores Z to current Missiles
-	mov r6,StartingSuperMissiles   ;Change N to number of supers you'd like to start with. For example 0Ah is 10 Super Missiles.
-	strb r6,[r5,4h]				   ;Stores N to max Super Missiles
-	strb r6,[r5,0Ah]			   ;Stores N to current Super Missiles
-	mov r6,StartingPowerBombs	   ;Change V to the number of Power Bombs you'd like to start with. For example 0Ah is 10 Power Bombs
-	strb r6,[r5,5h]				   ;Stores V to Max Power Bombs
-	strb r6,[r5,0Bh]			   ;Stores V to Current Power Bombs
-	mov r6,StartingSuitType		   ;Change W to type of Suit you'd like to start with
-	strb r6,[r5,12h]			   ;Stores W to Suit type flag
+	ldr r5,=Equipment		;Samus equipment
+	mov r6,StartingSuitMisc		;Change X to any combinations of values according to the Suit/Misc table above. For example, 60h gives you Gravity and morphball
+	strb r6,[r5,0Eh]		;Stores X to aquired Suit/Misc Items
+	strb r6,[r5,0Fh]		;Stores X to equipped Suit/Misc Items
+	mov r6,StartingBeamBombs	;Change Y to any combination of values according to the Beams/Bombs table. For example, 98h gives you Bombs, Charge Beam , and Plasma
+	strb r6,[r5,0Ch]		;Stores Y to aquired Beams/Bombs
+	strb r6,[r5,0Dh]		;Stores Y to equipped Beams/Bombs
+	mov r6,StartingMissiles		;Change Z to the number of missiles you'd like to start with. For example, 0Ah is 10 missiles.
+	strh r6,[r5,2h]			;Stores Z to max Missiles
+	strh r6,[r5,8h]			;Stores Z to current Missiles
+	mov r6,StartingSuperMissiles	;Change N to number of supers you'd like to start with. For example 0Ah is 10 Super Missiles.
+	strb r6,[r5,4h]			;Stores N to max Super Missiles
+	strb r6,[r5,0Ah]		;Stores N to current Super Missiles
+	mov r6,StartingPowerBombs	;Change V to the number of Power Bombs you'd like to start with. For example 0Ah is 10 Power Bombs
+	strb r6,[r5,5h]			;Stores V to Max Power Bombs
+	strb r6,[r5,0Bh]		;Stores V to Current Power Bombs
+	mov r6,StartingSuitType		;Change W to type of Suit you'd like to start with
+	strb r6,[r5,12h]		;Stores W to Suit type flag
 
 
-	strh r0,[r4,0Eh]			   ;everything after this is Hijack stuff, don't change
-	mov r0,StartingEnergy		   ;starting health, suppose you could change this
+	strh r0,[r4,0Eh]		;everything after this is Hijack stuff, don't change
+	mov r0,StartingEnergy		;starting health, suppose you could change this
 	mov r1,r8					  
 	strh r0,[r1]				   
 	strh r0,[r1,6h]				
-	ldr r5,=800BD82h			   ;Goes back to hijack area, do not change
+	ldr r5,=800BD82h		;Goes back to hijack area, do not change
 	mov r15,r5
 .pool
 .endarea

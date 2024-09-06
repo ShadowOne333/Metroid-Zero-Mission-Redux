@@ -1,0 +1,7 @@
+	* Disabling the entry for "BeamGet" on Plasma Beam and the others inside "ItemGrab" makes it so the item isn't toggled automatically.
+However, having Starting Items active alongside with Item Grab gives the unexpected side-effect of still being able to toggle the UnkItem on or off, which defeats the purpose.
+
+	* Disabling Starting Items all together restores the UnkItems to behave like in vanilla ZM.
+But, with Starting Items inactive, now the Full Suit for Varia doesn't work.
+
+Find a way to make both Item Grab and Starting Items work alongside each other. Right now I can only have either Full Varia or Unk Items, but not both at the same time.

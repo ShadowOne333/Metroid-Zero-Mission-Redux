@@ -84,18 +84,20 @@ Start()
 	# Patch Project ZM Mod IPS for initialization
 	echo "Patching 'Project ZM Mod' hack...";
 	$flips -a "code/ProjectZM/PZM-Mod.ips" "$mod_rom";
+	#$flips -a "code/ProjectZM/ProjZM083.ips" "$mod_rom";
+	#$flips -a "code/ProjectZM/ProjZM083-UnkEnabled.ips" "$mod_rom";
 	echo
 
 	echo "Beginning main assembly code compilation with Armips..."; echo
 
 	# Check if UnkItems was selected
-	if [ "$items" == "UnkItems" ]; then
-		sed -i 's%\t.include "code/Fundamentals.asm"%\t;.include "code/Fundamentals.asm"%g' $asm_file
-		sed -i 's%\t;.include "code/UnkItems.asm"%\t.include "code/UnkItems.asm"%g' $asm_file
-	else [ "$items" == "Redux" ]
-		sed -i 's%\t;.include "code/Fundamentals.asm"%\t.include "code/Fundamentals.asm"%g' $asm_file
-		sed -i 's%\t.include "code/UnkItems.asm"%\t;.include "code/UnkItems.asm"%g' $asm_file
-	fi
+	#if [ "$items" == "UnkItems" ]; then
+	#	sed -i 's%\t.include "code/Fundamentals.asm"%\t;.include "code/Fundamentals.asm"%g' $asm_file
+	#	sed -i 's%\t;.include "code/UnkItems.asm"%\t.include "code/UnkItems.asm"%g' $asm_file
+	#else [ "$items" == "Redux" ]
+	#	sed -i 's%\t;.include "code/Fundamentals.asm"%\t.include "code/Fundamentals.asm"%g' $asm_file
+	#	sed -i 's%\t.include "code/UnkItems.asm"%\t;.include "code/UnkItems.asm"%g' $asm_file
+	#fi
 
 	# Compile the main assembly file with the proper option
 	$armips $asm_file	# Main code
