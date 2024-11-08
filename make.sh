@@ -91,13 +91,20 @@ Start()
 	echo "Beginning main assembly code compilation with Armips..."; echo
 
 	# Check if UnkItems was selected
-	#if [ "$items" == "UnkItems" ]; then
-	#	sed -i 's%\t.include "code/Fundamentals.asm"%\t;.include "code/Fundamentals.asm"%g' $asm_file
-	#	sed -i 's%\t;.include "code/UnkItems.asm"%\t.include "code/UnkItems.asm"%g' $asm_file
-	#else [ "$items" == "Redux" ]
-	#	sed -i 's%\t;.include "code/Fundamentals.asm"%\t.include "code/Fundamentals.asm"%g' $asm_file
-	#	sed -i 's%\t.include "code/UnkItems.asm"%\t;.include "code/UnkItems.asm"%g' $asm_file
-	#fi
+	if [ "$items" == "Redux" ]; then
+
+		sed -i 's|;.include "code/asm/UnkItems.asm"|.include "code/asm/UnkItems.asm"|g' $asm_file
+		sed -i 's|.include "code/asm/KnownItems.asm"|;.include "code/asm/KnownItems.asm"|g' $asm_file
+
+	else [ "$items" == "UnkItems" ]
+
+		sed -i 's|.include "code/asm/UnkItems.asm"|;.include "code/asm/UnkItems.asm"|g' $asm_file
+		sed -i 's|;.include "code/asm/KnownItems.asm"|.include "code/asm/KnownItems.asm"|g' $asm_file
+
+	fi
+
+	# Remove any leftover or duplicated ';' comment symbols
+	sed -i 's|;;|;|g' $asm_file
 
 	# Compile the main assembly file with the proper option
 	$armips $asm_file	# Main code
