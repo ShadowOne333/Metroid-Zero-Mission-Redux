@@ -110,7 +110,7 @@ GetJingleNumber:
 	mov     r0,0x42
 	b       @@Return
 @@FullSuit:
-	mov     r0,0x37	; Get Item Jingle (0x37), 0x42 for UnkItem Jingle
+	mov     r0,0x42	; Get Item Jingle (0x37), 0x42 for UnkItem Jingle
 @@Return:
 	bx      r14
 	.pool

@@ -1,22 +1,22 @@
 ﻿CheckSuitAnim:
-  .notice tohex(.)
-  ldr r1,=CurrSprite + 0x1E
-  ldrb r0,[r1,#0x10]
-  beq @@Return
-  ldrb r0,[r1,#0x0]
-  cmp r0,#0xF
-  beq @@Call
-  cmp r0,#0xE
-  bne @@Return
-  @@Call:
-  bl 0x8055fa4
-  ldr r1,=SamusWeaponInfo
-  mov r0,#0x0
-  strb r0,[r1,#0x5]
-  @@Return:
-  ldr r0,=0x801BB00
-  mov pc,r0
-  .pool
+	.notice tohex(.)
+	ldr r1,=CurrSprite + 0x1E
+	ldrb r0,[r1,#0x10]
+	beq @@Return
+	ldrb r0,[r1,#0x0]
+	cmp r0,#0xF
+	beq @@Call
+	cmp r0,#0xE
+	bne @@Return
+	@@Call:
+	bl 0x8055fa4
+	ldr r1,=SamusWeaponInfo
+	mov r0,#0x0
+	strb r0,[r1,#0x5]
+	@@Return:
+	ldr r0,=0x801BB00
+	mov pc,r0
+	.pool
 
 EquipmentGet:
 	orr	r1,r0

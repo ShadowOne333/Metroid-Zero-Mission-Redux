@@ -9,7 +9,7 @@ knownItemsasm:
 ;-----------
 ; start with full suit
 .org 0x800BD7E
-	;bl	  StartFullSuit
+	bl	  StartFullSuit
 	
 ; display correct graphics
 .org 0x800A692

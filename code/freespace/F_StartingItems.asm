@@ -30,7 +30,7 @@
 
 ;-------------------------------------
 
-.definelabel StartingSuitType,			0x0	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
+.definelabel StartingSuitType,			0x1	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
 .definelabel StartingSuitMisc,			0x0
 .definelabel StartingBeamBombs,			0x0
 

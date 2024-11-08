@@ -2,7 +2,7 @@ unkItemsasm:
 
 ;uncomment the instructions below if you use Biosparks unknown items patch and also activate fullsuit
 .org 0x800B554	
-	cmp r1,#0x0	; cmp r1,#0x1
+	cmp r1,#0x1	; cmp r1,#0x1
 
 ;-----------
 ; Full Suit

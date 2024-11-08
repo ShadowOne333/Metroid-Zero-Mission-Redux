@@ -26,7 +26,7 @@
 
 .org 0x801BAF0
 	bl 0x804F670		;refreshes beam GFX (thanks biospark)	
-	;b 0x801BB00		;prevents going to status screen when getting an item
+	b 0x801BB00		;prevents going to status screen when getting an item
 
 ;change pointer from SetPauseFlag to unused RAM
 .org 0x8055FA0
@@ -45,37 +45,36 @@
 	mov pc,r0
 .org 0x8056048
 	mov pc,r0
+
+.ifdef unkItemsasm
 .org 0x801baf4
 	bl CheckSuitAnim
+.endif
 
 ;-------------------------------
 ; Additional options
 
-;.org 0x801B8CC		; Play sound routine for abilities (Prevents music from cutting off)
-	;bl PlaySound
-;.org 0x801B886		; sound for unknown items
-	;mov r0,0x3A
-;.org 0x801B898		; sound for abilities
-	;mov r0,0x3A
+.ifndef unkItems
+.org 0x801B8CC		; Play sound routine for abilities (Prevents music from cutting off)
+	bl PlaySound
+.org 0x801B886		; sound for unknown items
+	mov r0,0x37	; mov r0,0x3A
+.org 0x801B898		; sound for abilities
+	mov r0,0x37	; mov r0,0x3A
 
 ; .org 0x801B920
 	;.byte 14h	;makes ability messages two lines
 ; .org 0x801B950
 	;.byte 14h	;makes ability messages use the proper timer
 
-;.org 0x801B958		;time before an ability message can be closed (default 64h)
-	;mov		r0,32h
-;.org 0x801B962		;time before an expansion messages can be closed (default 64h)
-	;mov		r0,32h
-
-;-------------------------------
-
-.ifdef unkItemsasm
 .org 0x801B958			;time before an ability message can be closed (default 64h)
 	mov	r0,32h
 .org 0x801B962			;time before an expansion messages can be closed (default 64h)
 	mov	r0,32h
 .endif
+;-------------------------------
+
+
 
 .org 0x8013172
 	bl EquipmentGet		;MorphBall
