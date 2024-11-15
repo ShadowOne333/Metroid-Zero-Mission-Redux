@@ -54,7 +54,7 @@
 ;-------------------------------
 ; Additional options
 
-.ifndef unkItems
+.ifdef knownItemsasm
 .org 0x801B8CC		; Play sound routine for abilities (Prevents music from cutting off)
 	bl PlaySound
 .org 0x801B886		; sound for unknown items
@@ -71,10 +71,14 @@
 	mov	r0,32h
 .org 0x801B962			;time before an expansion messages can be closed (default 64h)
 	mov	r0,32h
+.else	;If unkItems instead of knownItems
+.org 0x801B958			;time before an ability message can be closed (default 64h)
+	mov	r0,64h
+.org 0x801B962			;time before an expansion messages can be closed (default 64h)
+	mov	r0,64h
 .endif
+
 ;-------------------------------
-
-
 
 .org 0x8013172
 	bl EquipmentGet		;MorphBall
@@ -85,21 +89,42 @@
 .org 0x8013B5E
 	bl EquipmentGet		;ScrewAttack
 .org 0x8013B7E
+.ifdef unkItemsasm
+	orr r0, r1
+	strb r0, [r2,0Eh]
+.else
 	bl EquipmentGet		;Varia
+.endif
 .org 0x8013BB6
+.ifdef unkItemsasm
+	orr r0, r1
+	strb r0, [r2,0Eh]
+.else
 	bl EquipmentGet		;Gravity
+.endif
 .org 0x80133B0
 	bl EquipmentGet		;Grip
+
 .org 0x8013B9E
+.ifdef unkItemsasm
+	orr r0, r1
+	strb r0, [r2,0Eh]
+.else
 	bl EquipmentGet		;SpaceJump
+.endif
 .org 0x8013AC6
-	bl	BeamGet		;LongBeam
+	bl BeamGet		;LongBeam
 .org 0x8013ADE
-	bl	BeamGet		;IceBeam
+	bl BeamGet		;IceBeam
 .org 0x8013AF6
-	bl	BeamGet		;WaveBeam
+	bl BeamGet		;WaveBeam
 .org 0x8013BCE
-	bl	BeamGet		;PlasmaBeam
+.ifdef unkItemsasm
+	orr r0, r1
+	strb r0, [r2,0Ch]
+.else
+	bl BeamGet		;PlasmaBeam
+.endif
 .org 0x8013656
 	ldrb	r1,[r2,0Ch]
 	mov	r0,10h

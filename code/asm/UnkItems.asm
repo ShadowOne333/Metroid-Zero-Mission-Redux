@@ -8,9 +8,11 @@ unkItemsasm:
 ; Full Suit
 ;-----------
 ; start with full suit
+
+; ENABLING THIS MAKES STARTING ITEMS NOT WORK WITH OG UNK ITEMS
 .org 0x800BD7E
-	bl	StartFullSuit
-	
+	bl StartFullSuit
+
 ; display correct graphics
 .org 0x800A692
 	mov r9,r0
@@ -38,9 +40,10 @@ unkItemsasm:
 ;.org 0x805CA1A ; skips setting events 0x13 (varia obtained) and 0x44 (varia skipped)
 	;b  0x805CA36
 
-;.org 80600d8h
-	;add r1,10h
-	;b 80600eeh
+;Uncommenting this restores the Power->Varia Suit obtain transition
+.org 80600D8h
+	add r1,10h
+	b 80600EEh
 	
 ; only activate gravity if obtained
 .org 0x80600EC

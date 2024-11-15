@@ -40,6 +40,14 @@
 	.endif
 .endarea
 
+.org 0x833FD30
+.area 0x53
+	.ifdef hazardDamageasm
+		.include "code/freespace/F_HazardDamageSuit.asm"
+		.notice "Hazard Damage Suit"
+	.endif
+.endarea
+
 .org 0x8361B00	; 
 .area 0x60
 	.ifdef smProjectilesasm
@@ -72,7 +80,7 @@
 .org 0x87609EC
 	.word UnkAnalysis
 
-.org endofROM 
+.org endofROM
 	.ifdef flashyDoorsasm
 		.include "code/freespace/F_FlashyDoors.asm"
 		.notice "Flashy Doors"
@@ -84,8 +92,8 @@
 	.endif
 
 	.ifdef plasmaNerfasm
-		;.include "ASM/FreespaceASM/F_plasmaNerf.asm"
-		;.notice "plasmaNerf"
+		.include "code/freespace/F_PlasmaNerf.asm"
+		.notice "Plasma Beam Nerfed"
 	.endif
 
 	.ifdef startingItemsasm
@@ -96,6 +104,11 @@
 	.ifdef tractorBeamasm
 		.include "code/freespace/F_TractorBeam.asm"
 		.notice "Tractor beam"
+	.endif
+	
+	.ifdef ledgeVaultasm
+		.include "code/freespace/F_LedgeVault.asm"
+		.notice "Ledge Vault"
 	.endif
 
 ;.org 0x8442D22		; Unknown Item

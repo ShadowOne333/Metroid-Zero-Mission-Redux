@@ -47,7 +47,11 @@
 
 ; START WITH ITEMS
 startingItems:
-	;strb r0,[r4]
+.notice tohex(.)
+	.ifdef unkItemsasm
+		;strb r0,[r4]
+	.endif
+
 	ldr r5,=Equipment		;Samus equipment
 	mov r6,StartingSuitMisc		;Change X to any combinations of values according to the Suit/Misc table above. For example, 60h gives you Gravity and morphball
 	strb r6,[r5,0Eh]		;Stores X to aquired Suit/Misc Items

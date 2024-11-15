@@ -59,9 +59,13 @@ o7 thank you friends. you are the reason cool stuff like this exists
 
 .include "code/asm/KnownItems.asm"
 
+.ifdef knownItemsasm
+	.include "code/asm/PlasmaNerf.asm"
+	.include "code/asm/StartingItems.asm"
+.endif
+
 .include "code/asm/ScaleEndPercent.asm"
 
-.include "code/asm/StartingItems.asm"
 .include "code/asm/StartingRoom.asm"
 
 .include "code/asm/TractorBeam.asm"
@@ -70,9 +74,9 @@ o7 thank you friends. you are the reason cool stuff like this exists
 
 .include "code/asm/WeaponToggleOnDeath.asm"
 
-;.include "code/addons/HazardDamageSuit_1.1.asm"
+;.include "code/addons/HazardDamageSuit.asm"
 
-;.include "code/addons/LedgeVault_2.1.asm"
+.include "code/addons/LedgeVault.asm"
 
 ;-------------------------------------
 ;	Freespace Hijacks

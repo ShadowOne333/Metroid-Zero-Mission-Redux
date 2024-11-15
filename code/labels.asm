@@ -32,6 +32,8 @@
 .definelabel DMATransfer,		0x80031E4
 .definelabel SamusCheckSetEnvironmentalEffect,	0x8006214
 .definelabel SamusUpdateAnim,		0x800847C
+.definelabel ProcessClipdataForSamus,	0x8057DF8
+.definelabel CheckMorphed,		0x80104A8
 .definelabel SpawnNewPrimarySprite,	0x800E31C
 .definelabel DoorUnlockTimer,		0x300007B
 .definelabel DoorsUnlockedFlag,		0x30054E4

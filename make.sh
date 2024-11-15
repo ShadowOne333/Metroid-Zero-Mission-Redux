@@ -88,7 +88,12 @@ Start()
 	#$flips -a "code/ProjectZM/ProjZM083-UnkEnabled.ips" "$mod_rom";
 	echo
 
-	echo "Beginning main assembly code compilation with Armips..."; echo
+	echo "Beginning main assembly code compilation with Armips..."
+	if [ "$items" == "Redux" ]; then
+		echo "Compiling Redux with vanilla Unknown Items..."; echo
+	else [ "$items" == "UnkItems" ]
+		echo "Compiling Redux with Unknown Items enabled..."; echo
+	fi
 
 	# Check if UnkItems was selected
 	if [ "$items" == "Redux" ]; then
