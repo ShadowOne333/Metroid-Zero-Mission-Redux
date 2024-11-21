@@ -15,29 +15,30 @@ ChangeSuit:
 	cmp     r0,1
 	bne     @@Return
 	; if full suit
-
+.ifdef unkItemsasm
 ; Default -- If full suit and not have BigSuit = 0x10 for Varia, or 0x20 for Gravity
-	; ldrb    r0,[r6,0xF]
-	; mov     r1,BigSuit
-	; and     r0,r1
-	; cmp     r0,0
-	; bne     @@Return
-	; mov     r0,0h
-	; strb    r0,[r6,0x12]
-
+	ldrb    r0,[r6,0xF]
+	mov     r1,BigSuit
+	and     r0,r1
+	cmp     r0,0
+	bne     @@Return
+	mov     r0,0h
+	strb    r0,[r6,0x12]
+.else
 ; Changed code -- If full suit and not have Bigsuit = 0x30 (Gravity + Varia)
 	ldrb    r0,[r6,0xF]
 	mov	r1,BigSuit
 	and     r0,r1
 	cmp     r0,r1
 	beq     @@Return
-	mov	r0,0h	
+	mov	r0,0h
 	strb    r0,[r6,0x12]
+.endif
 @@Return:
 	add     sp,-4h
 	bx      r14
 	.pool
-	
+
 RestoreSuit:
 	add     sp,4h
 	pop     r0
@@ -53,20 +54,21 @@ StatusScreen:
 	cmp     r2,2
 	beq     @@Return		; return r2 = 2 if suitless
 	ldrb    r2,[r0,0xF]
-
+.ifdef unkItemsasm
 ; Default code -- If have BigSuit = 0x10 for Varia, or 0x20 for Gravity
-	; mov     r1,0x20
-	; and     r2,r1
-	; cmp     r2,0
-	; beq     @@Return		; return r2 = 0 if no gravity
-	; mov     r2,1			; return r2 = 1 if gravity 
-	
+	mov     r1,0x20
+	and     r2,r1
+	cmp     r2,0
+	beq     @@Return		; return r2 = 0 if no gravity
+	mov     r2,1			; return r2 = 1 if gravity 
+.else
 ; Changed code -- If have Bigsuit = 0x30 (Gravity + Varia)
 	mov	r1,BigSuit
 	and     r2,r1
 	cmp     r2,r1
 	bne     @@Return		; return r2 = 0 if not gravity + varia
 	mov     r2,1			; return r2 = 1 if gravity + varia
+.endif
 @@Return:
 	bx      r14
 	.pool

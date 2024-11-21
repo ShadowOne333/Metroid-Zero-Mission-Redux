@@ -94,9 +94,9 @@
 
 ; Gravity does not protect against heat. Only protects against lava if Varia is also equipped. (captain glitch)
 .org 0x8008306
-	mov r0, 30h		; Used to AND current suits for varia + gravity
+	mov r0, 30h	; Used to AND current suits for varia + gravity
 .org 0x800830A 
-	cmp r0, 30h		; Compare Check for varia + gravity
+	cmp r0, 30h	; Compare Check for varia + gravity
 .org 0x800830C 
 	bne 800831Eh	; Branch if not equal to varia + gravity
 
@@ -340,18 +340,20 @@
 	; ; mov     r3,4h          ; Ice Wave______________Default 4h
 ; ; .org 0x8050090 
 	; ; mov     r3,3h          ; Wave__________________Default 3h
-; .org 0x80500BE 
-	; mov     r3,6h          ; Long Ice Wave Plasma,___Default 6h
-; .org 0x80500D8 
-	; mov     r3,5h          ; Long wave Plasma,_______Default 5h
-; .org 0x80500FA 
-	; mov     r3,5h          ; Ice Long/Wave Plasma,___Default 5h
-; .org 0x805010C 
-	; mov     r3,4h          ; Ice Plasma,_____________Default 4h
-; .org 0x8050126 
-	; mov     r3,4h          ; Long/Wave Plasma,_______Default 4h
-; .org 0x8050138 
-	; mov     r3,3h          ; Plasma,_________________Default 3h
+.ifdef unkItemsasm
+.org 0x80500BE 
+	mov     r3,6h          ; Long Ice Wave Plasma,___Default 6h
+.org 0x80500D8 
+	mov     r3,5h          ; Long wave Plasma,_______Default 5h
+.org 0x80500FA 
+	mov     r3,5h          ; Ice Long/Wave Plasma,___Default 5h
+.org 0x805010C 
+	mov     r3,4h          ; Ice Plasma,_____________Default 4h
+.org 0x8050126 
+	mov     r3,4h          ; Long/Wave Plasma,_______Default 4h
+.org 0x8050138 
+	mov     r3,3h          ; Plasma,_________________Default 3h
+.endif
 .org 0x805015C 
 	mov     r3,10h          ; Charged Short_________Default 8h
 .org 0x8050174 
@@ -368,7 +370,8 @@
 	mov     r3,20h         ; Charged Ice Wave______Default 10h
 .org 0x8050208 
 	mov     r3,18h         ; Charged Wave__________Default Ch
-.org 0x805023C 
+.ifdef unkItemsasm
+.org 0x805023C
 	mov     r3,30h         ; Charged Long Ice Wave Plasma,__Default 18h
 .org 0x8050256 
 	mov     r3,28h         ; Charged Long Wave Plasma,______Default 14h
@@ -380,7 +383,8 @@
 	mov     r3,20h         ; Charged Long/Wave Plasma,_______Default 10h
 .org 0x80502B6 
 	mov     r3,18h         ; Charged Plasma,_________________Default 0Ch
-	
+.endif
+
 ; Energy Tank Values
 ;.org 0x83459C4 ;Easy, 100 Default
 ;	.byte 0x64
@@ -439,10 +443,9 @@
 ; UNKNOWN ITEMS ENABLED = LESS PLASMA BEAM DAMAGE
 ;
 
-.ifdef knownItemsasm
 ;.org 0x805EF8A ; Instant room transitions (biospark)
 ;    b       0x805EF94
-	
+
 ; Ridley aggro damage threshold
 .org 0x8031DB6
 	cmp r1, 28h ; Default: C8 = 200 damage = 10 missiles
@@ -474,6 +477,7 @@
 .org 0x801128C
 	beq 80112B6h
 
+.ifdef knownItemsasm
 .org 0x80500BE 
 	mov     r3,2h          ; Long Ice Wave Plasma,__Default 6h
 .org 0x80500D8 

@@ -17,5 +17,5 @@
 
 .definelabel BigSuit,		0x10 		; Change this line to the desired fully powered suit (ex: 10 for varia, 20 for gravity, 30 for both)
 
-.definelabel endOFROM,		0x87F8000	; Change this to desired location of end of ROM for freespace ASM (0x8A00000)
+.definelabel EndOfROM,		0x87F8000	; Change this to desired location of end of ROM for freespace ASM (0x8A00000)
 .notice "Settings Loaded."

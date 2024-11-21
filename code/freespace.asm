@@ -80,7 +80,7 @@
 .org 0x87609EC
 	.word UnkAnalysis
 
-.org endofROM
+.org EndOfROM
 	.ifdef flashyDoorsasm
 		.include "code/freespace/F_FlashyDoors.asm"
 		.notice "Flashy Doors"

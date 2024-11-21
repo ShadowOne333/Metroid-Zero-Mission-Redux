@@ -85,7 +85,7 @@
 .definelabel WramPtr,			0x8754BB4
 .definelabel BXR0,                      0x808ABF8
 .definelabel BXR1,			0x808ABFC
-.definelabel WrapperR1,				0x808ABFC
+.definelabel WrapperR1,			0x808ABFC
 .definelabel BXR2,			0x808AC00
 .definelabel BXR3,                      0x808AC04
 .definelabel BXR4,                      0x808AC08

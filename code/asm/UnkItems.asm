@@ -1,8 +1,8 @@
 unkItemsasm:
 
 ;uncomment the instructions below if you use Biosparks unknown items patch and also activate fullsuit
-.org 0x800B554	
-	cmp r1,#0x1	; cmp r1,#0x1
+;.org 0x800B554	
+	;cmp r1,#0x1	; cmp r1,#0x1
 
 ;-----------
 ; Full Suit
@@ -10,8 +10,9 @@ unkItemsasm:
 ; start with full suit
 
 ; ENABLING THIS MAKES STARTING ITEMS NOT WORK WITH OG UNK ITEMS
-.org 0x800BD7E
-	bl StartFullSuit
+; COMMENTING OUT STARTING ITEMS+THIS MAKES UNK ITEMS UNTOGGABLE
+;.org 0x800BD7E
+	;bl StartFullSuit
 
 ; display correct graphics
 .org 0x800A692
@@ -78,53 +79,4 @@ unkItemsasm:
 	.word	UnkItemText
 .org 0x876069C		; Pointer for Gravity Suit (0x844289E)
 	.word	UnkItemText
-
-;---------
-; Statues
-;---------
-; replace chozo statue gfx
-;.org 0x82C15F0
-;	.import "code/fundamentals/gravity.gfx.lz"
-;.org 0x82C2B24
-;	.import "code/fundamentals/gravity_item.palette"
-
-;.org 0x82BF534
-;	.import "code/fundamentals/space.gfx.lz"
-;.org 0x82C0A58
-;	.import "code/fundamentals/space_item.palette"
-
-;.org 0x82C2BC4
-;	.import "code/fundamentals/plasma.gfx.lz"
-;.org 0x82C40F4
-;	.import "code/fundamentals/plasma_item.palette"
-
-; change secondary sprites
-;.org 0x801528A
-;	mov	 r0,1
-;.org 0x80152AE
-;	mov	 r0,1
-;.org 0x80152D0
-;	mov	 r0,1
-;.org 0x80152EC
-;	mov	 r0,1
-
-; change chozo statue OAM
-;.org 0x8015114
-;	.word 0x875F4E4	
-
-; change ability OAM
-; opening
-;.org 0x80163D4
-;	.word 0x82B5890
-;.org 0x80163E4
-;	.word 0x82B5890
-;.org 0x80163F4
-;	.word 0x82B5890
-; opened
-;.org 0x8016438
-;	.word 0x82B58B0
-;.org 0x8016448
-;	.word 0x82B58B0
-;.org 0x8016458
-;	.word 0x82B58B0
 

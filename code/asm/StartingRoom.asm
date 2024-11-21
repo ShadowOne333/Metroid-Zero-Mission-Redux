@@ -6,7 +6,7 @@ startingRoomasm:
 	ldr     r0,=AreaID
 	mov     r1,5			; New area
 	strb    r1,[r0]
-	mov     r1,0x38			; New door 0x38, 0x25 debug
+	mov     r1,0x38		; New door 0x38, 0x25 debug
 	strb    r1,[r0,2h]
 	ldr     r0,=HideHudFlag
 	mov     r1,0

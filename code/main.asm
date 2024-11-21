@@ -57,7 +57,7 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .include "code/asm/MinimapColours.asm"
 .notice "Add a 4th Minimap Colour"
 
-.include "code/asm/KnownItems.asm"
+;.include "code/asm/KnownItems.asm"
 
 .ifdef knownItemsasm
 	.include "code/asm/PlasmaNerf.asm"
@@ -70,7 +70,7 @@ o7 thank you friends. you are the reason cool stuff like this exists
 
 .include "code/asm/TractorBeam.asm"
 
-;.include "code/asm/UnkItems.asm"
+.include "code/asm/UnkItems.asm"
 
 .include "code/asm/WeaponToggleOnDeath.asm"
 

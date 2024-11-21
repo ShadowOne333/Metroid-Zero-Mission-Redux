@@ -30,7 +30,7 @@
 
 ;-------------------------------------
 
-.definelabel StartingSuitType,			0x1	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
+.definelabel StartingSuitType,			0x0	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
 .definelabel StartingSuitMisc,			0x0
 .definelabel StartingBeamBombs,			0x0
 
@@ -48,9 +48,7 @@
 ; START WITH ITEMS
 startingItems:
 .notice tohex(.)
-	.ifdef unkItemsasm
-		;strb r0,[r4]
-	.endif
+	;strb r0,[r4]
 
 	ldr r5,=Equipment		;Samus equipment
 	mov r6,StartingSuitMisc		;Change X to any combinations of values according to the Suit/Misc table above. For example, 60h gives you Gravity and morphball

@@ -24,9 +24,9 @@ EquipmentGet:
 	ldrb	r1,[r2,0Fh]
 .ifdef unkItemsasm
 	mov	r3,24h		;checks for space jump or grav and prevents their activation
-	and	r3,r0       ;
-	cmp	r3,0h       ;
-	bne	@@Return    ;
+	and	r3,r1		; r3,r0
+	cmp	r3,0h		;
+	bne	@@Return	;
 .endif
 	orr	r0,r1
 	strb	r0,[r2,0Fh]
@@ -39,9 +39,9 @@ BeamGet:
 	ldrb	r1,[r2,0Dh]
 .ifdef unkItemsasm
 	mov	r3,8h		;checks for plasma and prevents its activation
-	and	r3,r0       ;
-	cmp	r3,0h       ;
-	bne	@@Return    ;
+	and	r3,r1		; r3,r0
+	cmp	r3,0h		;
+	bne	@@Return	;
 .endif
 	orr	r0,r1
 	strb	r0,[r2,0Dh]
