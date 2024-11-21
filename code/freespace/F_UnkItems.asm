@@ -24,7 +24,7 @@ ChangeSuit:
 	bne     @@Return
 	mov     r0,0h
 	strb    r0,[r6,0x12]
-.else
+.else	; If UnkItems
 ; Changed code -- If full suit and not have Bigsuit = 0x30 (Gravity + Varia)
 	ldrb    r0,[r6,0xF]
 	mov	r1,BigSuit
@@ -56,12 +56,12 @@ StatusScreen:
 	ldrb    r2,[r0,0xF]
 .ifdef unkItemsasm
 ; Default code -- If have BigSuit = 0x10 for Varia, or 0x20 for Gravity
-	mov     r1,0x20
+	mov     r1,BigSuit
 	and     r2,r1
 	cmp     r2,0
 	beq     @@Return		; return r2 = 0 if no gravity
 	mov     r2,1			; return r2 = 1 if gravity 
-.else
+.else	; If UnkItems
 ; Changed code -- If have Bigsuit = 0x30 (Gravity + Varia)
 	mov	r1,BigSuit
 	and     r2,r1
@@ -112,7 +112,7 @@ GetJingleNumber:
 	mov     r0,0x42
 	b       @@Return
 @@FullSuit:
-	mov     r0,0x42	; Get Item Jingle (0x37), 0x42 for UnkItem Jingle
+	mov     r0,0x37	; Get Item Jingle (0x37), 0x42 for UnkItem Jingle
 @@Return:
 	bx      r14
 	.pool

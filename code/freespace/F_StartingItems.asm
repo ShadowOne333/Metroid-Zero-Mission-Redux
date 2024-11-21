@@ -30,7 +30,7 @@
 
 ;-------------------------------------
 
-.definelabel StartingSuitType,			0x0	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
+.definelabel StartingSuitType,			0x1	; 1 for FullyPowered, 2 for Suitless. 0 Normal is not handled correctly anymore because early Unknown Items require a fully powered "suit"
 .definelabel StartingSuitMisc,			0x0
 .definelabel StartingBeamBombs,			0x0
 
@@ -75,8 +75,8 @@ startingItems:
 	mov r1,r8					  
 	strh r0,[r1]				   
 	strh r0,[r1,6h]
-	mov r0,1h			; Not in original code
-	strb r0,[r1,12h]		; Not in original code
+	mov r0,1h			; Part of StartWithFullSuit, not in original code
+	strb r0,[r1,12h]		; Part of StartWithFullSuit, not in original code
 	ldr r5,=800BDCEh		;Goes back to hijack area, do not change (0xBD82)
 	mov r15,r5
 .pool

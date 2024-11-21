@@ -57,20 +57,20 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .include "code/asm/MinimapColours.asm"
 .notice "Add a 4th Minimap Colour"
 
-;.include "code/asm/KnownItems.asm"
-
-.ifdef knownItemsasm
-	.include "code/asm/PlasmaNerf.asm"
-	.include "code/asm/StartingItems.asm"
-.endif
-
 .include "code/asm/ScaleEndPercent.asm"
 
 .include "code/asm/StartingRoom.asm"
 
 .include "code/asm/TractorBeam.asm"
 
+unkItemsasm:
+;knownItemsasm:
 .include "code/asm/UnkItems.asm"
+
+.ifdef knownItemsasm
+	.include "code/asm/PlasmaNerf.asm"
+	.include "code/asm/StartingItems.asm"
+.endif
 
 .include "code/asm/WeaponToggleOnDeath.asm"
 

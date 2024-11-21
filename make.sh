@@ -98,13 +98,13 @@ Start()
 	# Check if UnkItems was selected
 	if [ "$items" == "Redux" ]; then
 
-		sed -i 's|;.include "code/asm/UnkItems.asm"|.include "code/asm/UnkItems.asm"|g' $asm_file
-		sed -i 's|.include "code/asm/KnownItems.asm"|;.include "code/asm/KnownItems.asm"|g' $asm_file
+		sed -i 's|;unkItemsasm:|unkItemsasm:|g' $asm_file
+		sed -i 's|knownItemsasm:|;knownItemsasm:|g' $asm_file
 
 	else [ "$items" == "UnkItems" ]
 
-		sed -i 's|.include "code/asm/UnkItems.asm"|;.include "code/asm/UnkItems.asm"|g' $asm_file
-		sed -i 's|;.include "code/asm/KnownItems.asm"|.include "code/asm/KnownItems.asm"|g' $asm_file
+		sed -i 's|unkItemsasm:|;unkItemsasm:|g' $asm_file
+		sed -i 's|;knownItemsasm:|knownItemsasm:|g' $asm_file
 
 	fi
 

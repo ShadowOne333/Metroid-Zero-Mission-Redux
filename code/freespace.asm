@@ -31,11 +31,11 @@
 .area 0xE5
 	.ifdef unkItemsasm
 		.include "code/freespace/F_UnkItems.asm"
-		.notice "Restore Unknown Items"
+		.notice "Restore Original Unknown Items"
 	.endif
 
 	.ifdef knownItemsasm
-		.include "code/freespace/F_KnownItems.asm"
+		.include "code/freespace/F_UnkItems.asm"
 		.notice "Recognize Unknown Items on Item Get"
 	.endif
 .endarea
