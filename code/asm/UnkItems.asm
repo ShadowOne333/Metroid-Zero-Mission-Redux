@@ -1,9 +1,10 @@
 ;unkItemsasm:
 
 ;uncomment the instructions below if you use Biosparks unknown items patch and also activate fullsuit
+.ifdef knownItemsasm
 .org 0x800B554	
 	cmp r1,#0x1
-
+.endif
 ;-----------
 ; Full Suit
 ;-----------
@@ -11,8 +12,8 @@
 
 ; ENABLING THIS MAKES STARTING ITEMS NOT WORK WITH OG UNK ITEMS
 ; COMMENTING OUT STARTING ITEMS+THIS MAKES UNK ITEMS UNTOGGABLE
-.org 0x800BD7E
-	bl StartFullSuit
+;.org 0x800BD7E
+	;bl StartFullSuit
 
 ; display correct graphics
 .org 0x800A692

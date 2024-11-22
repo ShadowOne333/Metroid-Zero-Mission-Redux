@@ -12,10 +12,10 @@ ChangeSuit:
 	ldr     r6,=Equipment
 	ldrb    r0,[r6,0x12]
 	push    r0
-	cmp     r0,1
-	bne     @@Return
+.ifdef unkItemsasm	; Fix by kiliwily
+	mov  	r1,1h		;cmp     r0,1
+	strb 	r1,[r6,0x12]	;bne     @@Return
 	; if full suit
-.ifdef unkItemsasm
 ; Default -- If full suit and not have BigSuit = 0x10 for Varia, or 0x20 for Gravity
 	ldrb    r0,[r6,0xF]
 	mov     r1,BigSuit
@@ -24,7 +24,9 @@ ChangeSuit:
 	bne     @@Return
 	mov     r0,0h
 	strb    r0,[r6,0x12]
-.else	; If UnkItems
+.else	; If KnownItems
+	cmp 	r0,1h
+	bne	@@Return
 ; Changed code -- If full suit and not have Bigsuit = 0x30 (Gravity + Varia)
 	ldrb    r0,[r6,0xF]
 	mov	r1,BigSuit

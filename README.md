@@ -133,13 +133,13 @@ If you want to apply any of the optional patches, you can use each Optional patc
 
 * **biospark** - For Unknown items, Starting room, Scale end percent, 4th map color.
 * **FelixWright** - For his original "Project ZM" hack, which also served as inspiration for this hack, and for his help and support towards certain hacks and porting them.
-* **CaptGlitch** - faster item grab, tractor beam, start with items
-* **Raygun** - tractor beam, unknown items, transparent map fix
-* **somerando(caauyjdp)** - more map messages, getting this to work
+* **CaptGlitch** - Faster item grab, tractor beam, start with items
+* **Raygun** - Tractor beam, Unknown items, Transparent map fix
+* **somerando(caauyjdp)** - More map messages, getting this to work
 * **quote58** - Tractor beam
-* **yohann** - Tractor beam, unknown items, more map messages
+* **yohann** - Tractor beam, Unknown items, more map messages
+* **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit and LedgeVault hacks. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
 * **Metroid Construction** overall for all the great resources, forums and help towards this hack.
-
 
 -------------------
 
