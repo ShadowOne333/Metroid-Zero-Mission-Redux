@@ -8,18 +8,18 @@ plasmaNerfasm:
 	mov r1,09h
 
 .org 0x080505D4
-	ldr		r0,=plasmaNerf
+	ldr 	r0,=plasmaNerf
 	mov 	r15,r0
 .pool
 
 ;Charged
 .org 0x0805067C
-	ldr		r0,=plasmaChargeNerf
+	ldr 	r0,=plasmaChargeNerf
 	mov 	r15,r0
 .pool
 
 ;Ice
 .org 0x0805074E
-	ldr		r0,=plasmaIceNerf
+	ldr 	r0,=plasmaIceNerf
 	mov 	r15,r0
 .pool

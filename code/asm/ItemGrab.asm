@@ -3,7 +3,7 @@
 ;.org 0x8014090 ; 02 0E -> 00 22
 ;	mov r0,2h ; pick up items already acquired, for testing purposes
 
-.org 0x8055fa4
+.org 0x8055FA4
 	.byte 0xE
 .org 0x8055fa8
 	b 0x8055FB4
@@ -29,25 +29,25 @@
 	b 0x801BB00		;prevents going to status screen when getting an item
 
 ;change pointer from SetPauseFlag to unused RAM
-.org 0x8055FA0
-	.word	0x3000C22
-.org 0x8060FA4
-	.word	0x3000C22
-.org 0x801BB10
-	.word	0x3000C22
-.org 0x8060F90
-	.word	0x3000C22
-.org 0x8056004
-	.word	0x801BB00
-.org 0x8056064
-	.word	0x801BB00
-.org 0x8055FE6
-	mov pc,r0
-.org 0x8056048
-	mov pc,r0
+;.org 0x8055FA0
+	;.word	0x3000C22
+;.org 0x8060FA4
+	;.word	0x3000C22
+;.org 0x801BB10
+	;.word	0x3000C22
+;.org 0x8060F90
+	;.word	0x3000C22
+;.org 0x8056004
+	;.word	0x801BB00
+;.org 0x8056064
+	;.word	0x801BB00
+;.org 0x8055FE6
+	;mov pc,r0
+;.org 0x8056048
+	;mov pc,r0
 
 .ifdef unkItemsasm
-.org 0x801baf4
+.org 0x801BAF4
 	bl CheckSuitAnim
 .endif
 
