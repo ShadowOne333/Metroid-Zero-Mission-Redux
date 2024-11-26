@@ -46,13 +46,13 @@
 .ifdef unkItemsasm
 .org 80600D8h
 	add r1,10h
-	b 80600EEh
+	b 0x80600EE
 .endif
 ; only activate gravity if obtained
 .org 0x80600EC
 	ldrb r1,[r2,0xE]
 	strb r1,[r2,0xF]
-	b    0x8060318	; skip check for SubSpriteData1.workVariable3 = 0x7 (RUINS_TEST_FIGHT_STAGE_STARTING_SUIT_ANIM)
+	b 0x8060318	; skip check for SubSpriteData1.workVariable3 = 0x7 (RUINS_TEST_FIGHT_STAGE_STARTING_SUIT_ANIM)
 
 ; don't change varia's map tile with full suit
 .org 0x806B212

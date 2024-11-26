@@ -12,6 +12,8 @@ ChangeSuit:
 	ldr     r6,=Equipment
 	ldrb    r0,[r6,0x12]
 	push    r0
+	cmp 	r0,2
+	beq 	@@Return	; branch if Suitless Samus
 .ifdef unkItemsasm	; Fix by kiliwily
 	mov  	r1,1h		;cmp     r0,1
 	strb 	r1,[r6,0x12]	;bne     @@Return

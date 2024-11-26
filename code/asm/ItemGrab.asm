@@ -37,14 +37,14 @@
 	;.word	0x3000C22
 ;.org 0x8060F90
 	;.word	0x3000C22
-;.org 0x8056004
-	;.word	0x801BB00
-;.org 0x8056064
-	;.word	0x801BB00
-;.org 0x8055FE6
-	;mov pc,r0
-;.org 0x8056048
-	;mov pc,r0
+.org 0x8056004
+	.word	0x801BB00
+.org 0x8056064
+	.word	0x801BB00
+.org 0x8055FE6
+	mov pc,r0
+.org 0x8056048
+	mov pc,r0
 
 .ifdef unkItemsasm
 .org 0x801BAF4
