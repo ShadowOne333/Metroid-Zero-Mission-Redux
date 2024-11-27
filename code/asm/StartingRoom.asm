@@ -1,7 +1,11 @@
 startingRoomasm:
-
-; Area 0, Door 33 is the one for Varia Suit
-; Area 5, Door 25 is the one for Plasma Beam
+; Debug tests for UnkItems
+; Area 5, Door 38 = Normal landing site for Redux
+; Area 0, Door 33 for Varia Suit
+; Area 5, Door 25 for Plasma Beam
+; Area 1, Door 50 for Space Jump
+; Area 3, Door 1F for Gravity Suit
+; Area 6, Door 58 for Charlie Fight (Needs Suitless Samus)
 .org 0x8060F5C
 	ldr     r0,=AreaID
 	mov     r1,5			; New area

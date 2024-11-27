@@ -1,10 +1,10 @@
 .org 0x807A118	; 01 D0 -> 00 00
 	mov r0,r0
-.org 0x807A048	; 00 -> 03 ; Unlock both time attack records
+.org 0x807A048	; 00 -> 03 	; Unlock both time attack records
 	mov r3,3h
-.org 0x807A0A6	; 3A D0 -> 00 00 ; Unlock gallery
+.org 0x807A0A6	; 3A D0 -> 00 00	; Unlock gallery
 	mov r0,0h
-.org 0x807A0FA	; 10 D0 -> 00 00 ; Unlock fusion gallery
+.org 0x807A0FA	; 10 D0 -> 00 00	; Unlock fusion gallery
 	mov r0,r0
 .org 0x807BAAE	; 09 D0 -> 00 00
 	mov r0,r0
@@ -91,14 +91,6 @@
 ; Replace track of statue activation cutscene (use this in conjunction with the cutscene skip, or else the music loops!)
 .org 0x805CB14
 	mov r1,0Ah
-
-; Gravity does not protect against heat. Only protects against lava if Varia is also equipped. (captain glitch)
-.org 0x8008306
-	mov r0, 30h	; Used to AND current suits for varia + gravity
-.org 0x800830A 
-	cmp r0, 30h	; Compare Check for varia + gravity
-.org 0x800830C 
-	bne 800831Eh	; Branch if not equal to varia + gravity
 
 ; Enable walljumping with space jump (jumzhu.diwa)
 .org 0x8006138

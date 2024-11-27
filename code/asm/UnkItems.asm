@@ -5,6 +5,7 @@
 .org 0x800B554	
 	cmp r1,#0x1
 .endif
+
 ;-----------
 ; Full Suit
 ;-----------

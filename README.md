@@ -139,6 +139,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 * **quote58** - Tractor beam
 * **yohann** - Tractor beam, Unknown items, more map messages
 * **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit and LedgeVault hacks. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
+* **HAMGER** - Fixes for Suitless Samus with Unknown Items.
 * **Metroid Construction** overall for all the great resources, forums and help towards this hack.
 
 -------------------

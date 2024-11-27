@@ -4,8 +4,10 @@
 	ldrb r0,[r1,#0x10]
 	beq @@Return
 	ldrb r0,[r1,#0x0]
-	;cmp r0,#0xF
-	;beq @@Call
+.ifdef knownItemsasm
+	cmp r0,#0xF
+	beq @@Call
+.endif
 	cmp r0,#0xE
 	bne @@Return
 @@Call:

@@ -74,7 +74,7 @@ unkItemsasm:
 
 .include "code/asm/WeaponToggleOnDeath.asm"
 
-;.include "code/addons/HazardDamageSuit.asm"
+.include "code/addons/HazardDamageSuit.asm"
 
 .include "code/addons/LedgeVault.asm"
 

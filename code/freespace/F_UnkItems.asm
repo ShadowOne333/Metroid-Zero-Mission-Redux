@@ -12,7 +12,9 @@ ChangeSuit:
 	ldr     r6,=Equipment
 	ldrb    r0,[r6,0x12]
 	push    r0
-	cmp 	r0,2
+	;cmp 	r0,1h
+	;bne	@@Return
+	cmp 	r0,2h		; Suitless Samus fix by HAMGER
 	beq 	@@Return	; branch if Suitless Samus
 .ifdef unkItemsasm	; Fix by kiliwily
 	mov  	r1,1h		;cmp     r0,1
@@ -27,8 +29,6 @@ ChangeSuit:
 	mov     r0,0h
 	strb    r0,[r6,0x12]
 .else	; If KnownItems
-	cmp 	r0,1h
-	bne	@@Return
 ; Changed code -- If full suit and not have Bigsuit = 0x30 (Gravity + Varia)
 	ldrb    r0,[r6,0xF]
 	mov	r1,BigSuit
@@ -55,11 +55,13 @@ RestoreSuit:
 StatusScreen:
 	ldr	r0,=Equipment
 	ldrb    r2,[r0,0x12]
-	cmp     r2,2
+	cmp     r2,2h
 	beq     @@Return		; return r2 = 2 if suitless
-	ldrb    r2,[r0,0xF]
 .ifdef unkItemsasm
+	cmp 	r2,1h
+	beq 	@@Return		; Fix for FullSuit anim after Charlie is defeated
 ; Default code -- If have BigSuit = 0x10 for Varia, or 0x20 for Gravity
+	ldrb    r2,[r0,0xF]
 	mov     r1,BigSuit
 	and     r2,r1
 	cmp     r2,0
@@ -67,6 +69,7 @@ StatusScreen:
 	mov     r2,1			; return r2 = 1 if gravity 
 .else	; If UnkItems
 ; Changed code -- If have Bigsuit = 0x30 (Gravity + Varia)
+	ldrb    r2,[r0,0xF]
 	mov	r1,BigSuit
 	and     r2,r1
 	cmp     r2,r1

@@ -33,5 +33,6 @@ NextHazardVaria:
 	mov r6,1h
 	b 80083A8h
 NoVaria:
-	bl FreeSpaceHazard
+	bl FreespaceHazard
+	cmp r2, #4	; Restore leftover byte
 .pool

@@ -4,14 +4,16 @@
 ;	mov r0,2h ; pick up items already acquired, for testing purposes
 
 .org 0x8055FA4
-	.byte 0xE
+	cmp r0,#0xE
 .org 0x8055fa8
 	b 0x8055FB4
-.org 0x8056008
-	.byte 0xF
+; Charlie fight fix by commenting this out
+;.org 0x8056008
+	;cmp r0,#0xF
 
+; Charlie fight X-pos fix after Status screen
 .org 0x8056054 ; set X pos
-	.word 0x280 
+	.word 0x7BF	;Originally .word 0x280
 .org 0x8056020 ; set Y pos
 	mov r0,#0x60
 	lsl r0,r0,#0x4
@@ -29,13 +31,13 @@
 	b 0x801BB00		;prevents going to status screen when getting an item
 
 ;change pointer from SetPauseFlag to unused RAM
-;.org 0x8055FA0
+;.org 0x8055FA0	; This line causes rooms with water to show a graphical glitch after returning from the Pause menu
 	;.word	0x3000C22
-;.org 0x8060FA4
-	;.word	0x3000C22
-;.org 0x801BB10
-	;.word	0x3000C22
-;.org 0x8060F90
+.org 0x8060FA4
+	.word	0x3000C22
+.org 0x801BB10
+	.word	0x3000C22
+;.org 0x8060F90	; This line causes the Charlie fight to reset
 	;.word	0x3000C22
 .org 0x8056004
 	.word	0x801BB00
@@ -43,8 +45,9 @@
 	.word	0x801BB00
 .org 0x8055FE6
 	mov pc,r0
-.org 0x8056048
-	mov pc,r0
+; Charlie fight fix by commenting this out
+;.org 0x8056048
+	;mov pc,r0
 
 .ifdef unkItemsasm
 .org 0x801BAF4
