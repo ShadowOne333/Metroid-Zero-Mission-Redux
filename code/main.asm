@@ -88,6 +88,15 @@ unkItemsasm:
 ;-------------------------------------
 
 ;.include "optional/low_health_alarm.asm"
+.ifdef removeHealthAlarm
+	.notice "Optional: Low Health Alarm Removed"
+.endif
+
+
+.include "optional/purple_gravity_suit.asm"
+.ifdef blueGravity
+	.notice "Optional: Purple Gravity Suit"
+.endif
 
 ;-------------------------------------
 
