@@ -93,7 +93,7 @@ unkItemsasm:
 .endif
 
 
-.include "optional/purple_gravity_suit.asm"
+;.include "optional/purple_gravity_suit.asm"
 .ifdef blueGravity
 	.notice "Optional: Purple Gravity Suit"
 .endif

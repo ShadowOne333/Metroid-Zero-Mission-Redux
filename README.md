@@ -40,8 +40,8 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 * Modify the Morph Ball so its rolling animation stops when Samus is static or not moving at all. The rolling animation only works as normal when moving left or right. **NOTE:** It's said that this one causes issues/crashes with the Chozo statues and with the "Charlie" boss (the one that gives Samus' her Full Suit / Gravity Suit), but on a full 100% playthrough on my own, I didn't get any crashes.
 * A fix for the Sidehopper (Dessgeega) has been implemented.
 * Doors now have a flashy/pulsating light to them.
-* Kraid is now vulnerable to the Plasma Beam, since you can obtain it way earlier now with the UnkItems hack patched in.
 * More accurate In-Game clock (a second each 60 frames instead of 64 frames)
+* Gravity Suit no longer protects from heat, you should have Varia for that feature.
 * Bunch of new QoL stuff, courtesy of the "Fundamentals" hack, which puts together a lot of hacks gathered over the years for Zero Mission, some of which are:
 	- Tractor Beam, to draw items towards Samus when charging the beam
 	- Faster Item Grab
@@ -52,7 +52,8 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 	- Updated area texts
 	- Weapon Missile toggle fix on Samus' death
 	- Full Suit without Gravity (for Varia Suit+Shoulder Pads)
-	- Activated Unknown Items right after obtaining them
+	- Optional: Activated Unknown Items right after obtaining them (Known Items).
+		- Kraid is now vulnerable to the Plasma Beam, since you can obtain it way earlier now with the "Known Items" hack patched in.
 	- Start With Items (Unused for Redux)
 	- Transparent Map fix
 
@@ -63,14 +64,16 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 ## Optional patches
 
 1. **Disable Low Health Alarm** - Self-explanatory. Disables the alarm that you get when Samus is on low health
+2. **Purple Gravity Suit** - (WIP) Changes the Gravity Suit palette to be purple instead of having a pink hue (also applies to cutscenes/images with Gravity in them)
+3. **Unlock All Gallery Images** - (WIP) Unlocks all 8 gallery images right from the start.
 
 -------------------
 
 ## To-Do
 
 1. Reimplement the Introduction's closeup of Samus' face when starting the game (originally seen when starting in Brinstar. This was removed due to the starting location being changed to Crateria in Project ZM.
-2. There might be other things that might be added, but it's still uncertain whether or not I'd want to do more, since that's the only thing missing in Zero Mission for me to make it perfect.
-3. Include the "Hazard Damage Suit" and "Ledge Vault" codes from "addons" properly into Redux.
+2. Pinpoint and change some of the game cutscenes with non-powered Varia Suit to show the big shoulders Varia Suit instead (for consistency).
+3. Optional patch for making the Gravity Suit more in-line with the current purple iteration it is known for, instead of pink (Cutscenes and gallery images too).
 4. Possibly more optional patches.
 
 -------------------
@@ -131,6 +134,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 
 ## Credits
 
+* **ShadowOne333** - Main developer for "Metroid: Zero Mission Redux".
 * **biospark** - For Unknown items, Starting room, Scale end percent, 4th map color.
 * **FelixWright** - For his original "Project ZM" hack, which also served as inspiration for this hack, and for his help and support towards certain hacks and porting them.
 * **CaptGlitch** - Faster item grab, tractor beam, start with items
@@ -140,7 +144,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 * **yohann** - Tractor beam, Unknown items, more map messages
 * **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit and LedgeVault hacks. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
 * **HAMGER** - Fixes for Suitless Samus with Unknown Items.
-* **Metroid Construction** overall for all the great resources, forums and help towards this hack.
+* **Metroid Construction** for all the great resources, forums and help towards this hack.
 
 -------------------
 
