@@ -44,6 +44,8 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .include "code/asm/DessgeegaSidehopperFix.asm"
 .notice "Dessgeega Sidehopper Fix"
 
+;.include "code/asm/EditWeapons.asm"
+
 .include "code/asm/FlashyDoors.asm"
 
 .include "code/asm/ItemGrab.asm"
@@ -93,7 +95,7 @@ unkItemsasm:
 .endif
 
 
-;.include "optional/purple_gravity_suit.asm"
+.include "optional/purple_gravity_suit.asm"
 .ifdef blueGravity
 	.notice "Optional: Purple Gravity Suit"
 .endif

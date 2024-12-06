@@ -14,9 +14,10 @@
 ; Charlie fight X-pos fix after Status screen
 .org 0x8056054 ; set X pos
 	.word 0x7BF	;Originally .word 0x280
+; Charlie fight Y-pos fix after Status screen
 .org 0x8056020 ; set Y pos
-	mov r0,#0x60
-	lsl r0,r0,#0x4
+	mov r0,#0xC4	;Originally mov r0,#0x60
+	lsl r0,r0,#0x3	;Originally lsl r0,r0,#0x4
 .org 0x805FED0
 	b 0x8060318
 

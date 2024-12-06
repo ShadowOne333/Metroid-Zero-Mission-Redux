@@ -2,12 +2,21 @@
 	mov r0,r0
 .org 0x807A048	; 00 -> 03 	; Unlock both time attack records
 	mov r3,3h
+
 .org 0x807A0A6	; 3A D0 -> 00 00	; Unlock gallery
 	mov r0,0h
+.org 0x807A0B0	; 3A D0 -> 00 00	; Golden Gallery text
+	mov r0,0h
+	
 .org 0x807A0FA	; 10 D0 -> 00 00	; Unlock fusion gallery
 	mov r0,r0
 .org 0x807BAAE	; 09 D0 -> 00 00
 	mov r0,r0
+
+; fix wrong tile colour in Gallery Image #1
+; 0x3D92 -> 0x4D10
+.org 0x854A942
+	.halfword 0x4D10
 
 ; fix for area message corner not being flipped
 ; .org 0x82f8081
