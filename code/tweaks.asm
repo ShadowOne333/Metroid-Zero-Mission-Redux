@@ -7,7 +7,9 @@
 	mov r0,0h
 .org 0x807A0B0	; 3A D0 -> 00 00	; Golden Gallery text
 	mov r0,0h
-	
+.org 0x80876AE	; 00 D9 -> 00 00 	; Unlock all gallery images
+	mov r0,0h
+
 .org 0x807A0FA	; 10 D0 -> 00 00	; Unlock fusion gallery
 	mov r0,r0
 .org 0x807BAAE	; 09 D0 -> 00 00
@@ -444,8 +446,9 @@
 ; UNKNOWN ITEMS ENABLED = LESS PLASMA BEAM DAMAGE
 ;
 
-;.org 0x805EF8A ; Instant room transitions (biospark)
-;    b       0x805EF94
+
+.org 0x805EF8A ; Fast room transitions
+    b       0x805EF94
 
 ; Ridley aggro damage threshold
 .org 0x8031DB6

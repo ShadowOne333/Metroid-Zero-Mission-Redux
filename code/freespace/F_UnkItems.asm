@@ -59,12 +59,13 @@ StatusScreen:
 	beq     @@Return		; return r2 = 2 if suitless
 .ifdef unkItemsasm
 ; This part has issues with showing up non-full suit when deactivating Varia/Gravity
-	cmp 	r2,1h
-	beq 	@@Return		; Fix for FullSuit anim after Charlie is defeated
+	;cmp 	r2,1h
+	;beq 	@@Return		; Fix for FullSuit anim after Charlie is defeated
 ; Default code -- If have BigSuit = 0x10 for Varia, or 0x20 for Gravity
 	ldrb    r2,[r0,0xF]
 	mov     r1,BigSuit
 	and     r2,r1
+@@NoPower:
 	cmp     r2,0
 	beq     @@Return		; return r2 = 0 if no gravity
 	mov     r2,1			; return r2 = 1 if gravity 

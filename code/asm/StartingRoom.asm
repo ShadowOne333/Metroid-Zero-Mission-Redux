@@ -1,6 +1,7 @@
 startingRoomasm:
 ; Debug tests for UnkItems
 ; Area 5, Door 38 = Normal landing site for Redux
+; Area 0, Door 0 for vanilla Brinstar starting room
 ; Area 0, Door 33 for Varia Suit
 ; Area 5, Door 25 for Plasma Beam
 ; Area 1, Door 50 for Space Jump

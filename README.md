@@ -42,6 +42,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 * Doors now have a flashy/pulsating light to them.
 * More accurate In-Game clock (a second each 60 frames instead of 64 frames)
 * Gravity Suit no longer protects from heat, you should have Varia for that feature.
+* Zero Suit's pistol can now be charged, this replaces the pistol meter so that a full charge will be able to freeze the pirates now.
 * Bunch of new QoL stuff, courtesy of the "Fundamentals" hack, which puts together a lot of hacks gathered over the years for Zero Mission, some of which are:
 	- Tractor Beam, to draw items towards Samus when charging the beam
 	- Faster Item Grab
@@ -52,29 +53,32 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 	- Updated area texts
 	- Weapon Missile toggle fix on Samus' death
 	- Full Suit without Gravity (for Varia Suit+Shoulder Pads)
+	- Transparent Map fix
 	- Optional: Activated Unknown Items right after obtaining them (Known Items).
 		- Kraid is now vulnerable to the Plasma Beam, since you can obtain it way earlier now with the "Known Items" hack patched in.
-	- Start With Items (Unused for Redux)
-	- Transparent Map fix
+		- Start With Items (Known Items)
 
+* Hard Mode, Time Attack, Main Gallery and Fusion Gallery are all unlocked from the start. The Main Gallery also has all 8 images right from the start (this can be changed back with the 'Hide All Gallery Images' optional patch).
 * An option to select either the original behaviour for the Chozo Items, where grabbing them keeps them disabled until you get to Chozodia's boss, or a second option that enables the items as soon as you get them, so you can grab the Space Jump, Plasma Beam and Gravity Suit before even getting to Chozodia and obtaining/cleanup the maps from more items, or just wreck havoc if you can get them early on.
 
 -------------------
 
 ## Optional patches
 
-1. **Disable Low Health Alarm** - Self-explanatory. Disables the alarm that you get when Samus is on low health
-2. **Purple Gravity Suit** - (WIP) Changes the Gravity Suit palette to be purple instead of having a pink hue (also applies to cutscenes/images with Gravity in them)
-3. **Unlock All Gallery Images** - (WIP) Unlocks all 8 gallery images right from the start.
+1. **Disable Low Health Alarm** - Disables the alarm that you get when Samus is on low health.
+2. **Purple Gravity Suit** - Changes the Gravity Suit palette to be purple, similar to the Super Metroid one, instead of having a pink hue.
+3. **Hide All Gallery Images** - Locks back all 8 gallery images like in the original game, so the player can unlock them through the usual conditions.
+4. **Remove Closeup** - Removes the Closeup you get when first starting a new game. This patch is only added for preservation sake.
 
 -------------------
 
 ## To-Do
 
-1. Reimplement the Introduction's closeup of Samus' face when starting the game (originally seen when starting in Brinstar. This was removed due to the starting location being changed to Crateria in Project ZM.
+1. Reimplement the Introduction's closeup of Samus' face when starting the game (originally seen when starting in Brinstar. This was removed due to the starting location being changed to Crateria in Project ZM. Need to find a way to re-enable it and make it appear in Crateria with Crateria's palette.
 2. Pinpoint and change some of the game cutscenes with non-powered Varia Suit to show the big shoulders Varia Suit instead (for consistency).
-3. Optional patch for making the Gravity Suit more in-line with the current purple iteration it is known for, instead of pink (Cutscenes and gallery images too).
-4. Possibly more optional patches.
+3. Fix the discrepancy of the cutscene after Charlie not showing up the fully powered suit when entering the Status Screen.
+4. Fix the 'Zero Charge' hack to allow for the full sound of the charge beam instead of cutting it out.
+5. Possibly more optional patches.
 
 -------------------
 
@@ -142,6 +146,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 * **somerando(caauyjdp)** - More map messages, getting this to work
 * **quote58** - Tractor beam
 * **yohann** - Tractor beam, Unknown items, more map messages
+* **zidj** - For all his help in several hacks, fixes and suggestions in the MAGConst Discord Server.
 * **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit and LedgeVault hacks. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
 * **HAMGER** - Fixes for Suitless Samus with Unknown Items.
 * **Metroid Construction** for all the great resources, forums and help towards this hack.
