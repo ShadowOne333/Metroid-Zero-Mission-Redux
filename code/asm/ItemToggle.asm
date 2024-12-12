@@ -1,3 +1,5 @@
+; Toggle abilities on and off with [select] in the status screen, a la Super Metroid.
+
 itemToggleasm:
 
 ; enable item toggle

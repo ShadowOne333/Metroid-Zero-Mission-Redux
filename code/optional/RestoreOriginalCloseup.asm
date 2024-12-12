@@ -15,7 +15,7 @@ restoreCloseup:
 	mov r6, #0xA0
 
 ; Samus Closeup palette
-;.org 0x8367924
-
+.org 0x8367924
+.incbin "code/optional/closeup/CloseupBGPalette.pal"
 
 

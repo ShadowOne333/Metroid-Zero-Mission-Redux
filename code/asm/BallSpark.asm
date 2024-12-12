@@ -1,3 +1,4 @@
+; Enables initiating a morph ball shinespark, in midair.
 ballSparkasm:
 ; hijack input check
 .org 0x8008010

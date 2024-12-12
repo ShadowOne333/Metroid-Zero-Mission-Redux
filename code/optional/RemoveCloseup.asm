@@ -1,3 +1,5 @@
+; Samus' Closeup at the beginning of the game is known to mess with graphics in hacks, so this lets hackers disable it with ease.
+
 removeCloseup:
 .org 0x806061C
 	ldr     r0,=HideHudFlag

@@ -23,7 +23,7 @@
 
 ## Metroid Zero Mission Redux
 
-“Metroid Zero Mission Redux” is a personal hack of "Metroid Zero Mission (U)" that has a few QoL features ported over from other QoL hacks available on the Metroid Construction website, more specifically, this is based on ["Project ZM" v0.83 by FelixWright/Ckosmic](https://forum.metroidconstruction.com/index.php/topic,4879.0.html), with some further modifications and improvements thrown in from other Zero Mission hacks.
+“Metroid Zero Mission Redux” is a personal hack of "Metroid Zero Mission (U)" that has a few QoL features ported over from other QoL hacks available on the Metroid Construction website, more specifically, this is based on ["Project ZM" v0.83 by FelixWright/Ckosmick](https://forum.metroidconstruction.com/index.php/topic,4879.0.html), with some further modifications and improvements thrown in from other Zero Mission hacks.
 
 Follow the GitHub repository for the full source code of the project:
 https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
@@ -42,7 +42,9 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 * Doors now have a flashy/pulsating light to them.
 * More accurate In-Game clock (a second each 60 frames instead of 64 frames)
 * Gravity Suit no longer protects from heat, you should have Varia for that feature.
-* Zero Suit's pistol can now be charged, this replaces the pistol meter so that a full charge will be able to freeze the pirates now.
+* Zero Suit's pistol can now be charged, this replaces the pistol meter so that a full charge will be able to freeze the pirates now. This can be disabled to behave like in vanilla ZM via an optional patch.
+* Firing a Charged shot now also fires a muzzle flare, like in Fusion.
+* Expanded Sound Test so all tracks in the game can be listened to (by kiliwily).
 * Bunch of new QoL stuff, courtesy of the "Fundamentals" hack, which puts together a lot of hacks gathered over the years for Zero Mission, some of which are:
 	- Tractor Beam, to draw items towards Samus when charging the beam
 	- Faster Item Grab
@@ -69,6 +71,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 2. **Purple Gravity Suit** - Changes the Gravity Suit palette to be purple, similar to the Super Metroid one, instead of having a pink hue.
 3. **Hide All Gallery Images** - Locks back all 8 gallery images like in the original game, so the player can unlock them through the usual conditions.
 4. **Remove Closeup** - Removes the Closeup you get when first starting a new game. This patch is only added for preservation sake.
+5. **Start in Brinstar** - Changes the default starting location from Crateria's Landing Site to the normal starting room in Brinstar like in vanilla Zero Mission (This one restores the Samus Face Closeup as well).
 
 -------------------
 
@@ -78,6 +81,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 2. Pinpoint and change some of the game cutscenes with non-powered Varia Suit to show the big shoulders Varia Suit instead (for consistency).
 3. Fix the discrepancy of the cutscene after Charlie not showing up the fully powered suit when entering the Status Screen.
 4. Fix the 'Zero Charge' hack to allow for the full sound of the charge beam instead of cutting it out.
+5. Optional patch to start back in Brinstar like in original ZM.
 5. Possibly more optional patches.
 
 -------------------
@@ -139,15 +143,15 @@ If you want to apply any of the optional patches, you can use each Optional patc
 ## Credits
 
 * **ShadowOne333** - Main developer for "Metroid: Zero Mission Redux".
-* **biospark** - For Unknown items, Starting room, Scale end percent, 4th map color.
-* **FelixWright** - For his original "Project ZM" hack, which also served as inspiration for this hack, and for his help and support towards certain hacks and porting them.
-* **CaptGlitch** - Faster item grab, tractor beam, start with items
-* **Raygun** - Tractor beam, Unknown items, Transparent map fix
-* **somerando(caauyjdp)** - More map messages, getting this to work
-* **quote58** - Tractor beam
-* **yohann** - Tractor beam, Unknown items, more map messages
-* **zidj** - For all his help in several hacks, fixes and suggestions in the MAGConst Discord Server.
-* **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit and LedgeVault hacks. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
+* **FelixWright / Ckosmick / zidj** - For his original "Project ZM" hack, which also served as inspiration for this hack, and for his help and support towards certain hacks and porting them. Also, for the Slow in liquids and More Map Station messages hacks, and for for all his help in several hacks, fixes and suggestions in the MAGConst Discord Server.
+* **biospark** - Customizable 4th minimap colour, Enable Unknown items, Power Bombs before Bombs, Fusion style R-Shooting. Item percentage scaling, Tractor beam, Mid-air ballsparking, Remove intro closeup, SM Item toggling, Adjustable starting room, 2-line text boxes.
+* **CaptGlitch** - Adjustable escape timers, Better Morph Ball rolling, SM Style controls, SM style item grabbing, Toggle missile select with R, Gravity Suit taking heat damage, Shinespark steering, Speedbooster in Morph Ball, unlocking of Kraid's doors, Tractor beam, Start with items.
+* **JumZhu.Diwa** - Walljumping with Space Jump tweak.
+* **Raygun** - Plasma Beam nerf, Super Metroid style projectiles, SM Controls, Colorful HUD, Charge beam flare, Tractor beam, Unknown items, Transparent map fix, Single Wave Beam shot, many tweaks.
+* **somerando (caauyjdp)** - Tractor beam, more map messages.
+* **yohann** - Tractor beam, Unknown items, more map messages.
+* **quote58** - Tractor beam, getting some asm to work.
+* **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit, LedgeVault and Sound Test Expansion hacks. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
 * **HAMGER** - Fixes for Suitless Samus with Unknown Items.
 * **Metroid Construction** for all the great resources, forums and help towards this hack.
 

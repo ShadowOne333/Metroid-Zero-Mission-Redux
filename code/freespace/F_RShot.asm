@@ -1,4 +1,4 @@
-; new code
+; Adds R shot functionality back into zero mission from fusion. Pressing R with charge beam releases the shot without interrupting a spin jump.
 CheckFireBeam:
 	push    r14
 	ldrb    r0,[r4,5]		; load charge counter

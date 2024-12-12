@@ -1,3 +1,5 @@
+; Allows hackers to scale the item collection percentage at the end of the game to the correct amount, based on what is in each area.
+
 scaleEndPercentasm:
 
 ; hijack calc percent routine

@@ -1,3 +1,5 @@
+; With a fully charged beam you can suck in item drops, a la Metroid Prime.
+
 tractorBeamasm:
 
 ; Updated tractor beam ASM

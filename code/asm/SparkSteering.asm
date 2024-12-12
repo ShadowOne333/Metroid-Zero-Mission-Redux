@@ -1,4 +1,6 @@
-﻿sparkSteeringasm:
+; Shinesparking is now steerable with the DPAD, within reason. Vertical sparks steer horizontally, Horizontal sparks steer vertically. Diagonal sparks are also effected.
+
+sparkSteeringasm:
 
 .org 0x80077BC
 	cmp		r0,0FFh

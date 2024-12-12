@@ -1,4 +1,6 @@
-﻿itemGrabasm:
+; This makes item grabbing more like Super Metroid in that it doesn't take you to the status screen every time.
+
+itemGrabasm:
 
 ;.org 0x8014090 ; 02 0E -> 00 22
 ;	mov r0,2h ; pick up items already acquired, for testing purposes

@@ -233,6 +233,11 @@
 		.notice "Ledge Vault"
 	.endif
 
+	.ifdef singleWaveBeamasm
+		.include "code/freespace/F_SingleWaveBeamShot.asm"
+		.notice "Single Wave Beam Shot"
+	.endif
+
 ;-------------------------------------
 ;.org 0x8442D22		; Unknown Item
 UnkItemText:

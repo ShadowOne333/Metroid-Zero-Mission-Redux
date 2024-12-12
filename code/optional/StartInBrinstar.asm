@@ -11,9 +11,9 @@ startingRoomasm:
 ; Area 6, Door 58 for Charlie Fight (Needs Suitless Samus)
 .org 0x8060F5C
 	ldr     r0,=AreaID
-	mov     r1,5			; New area
+	mov     r1,0			; New area
 	strb    r1,[r0]
-	mov     r1,0x38			; New door 0x38, 0x25 debug
+	mov     r1,0x0			; New door 0x38, 0x25 debug
 	strb    r1,[r0,2h]
 	ldr     r0,=HideHudFlag
 	mov     r1,0
@@ -24,3 +24,5 @@ startingRoomasm:
 	bl      0x80039F4
 	b       0x8060FDA
 	.pool
+
+.include "code/optional/RestoreOriginalCloseup.asm"

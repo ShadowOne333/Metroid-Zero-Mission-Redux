@@ -1,3 +1,5 @@
+; Shooting a charged shot creates a muzzle flare that can damage enemies in close proximity, like in Fusion.
+
 flareSpawnhijack:
 	mov		r1,r4
 	cmp		r1,0x17

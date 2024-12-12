@@ -1,3 +1,9 @@
+; Samus' suit is now compatible with unknown items, right from the start!
+; This hack can be configured in one of two ways:
+; 1. UnkItems - Same behaviour as vanilla Zero Mission, obtaining Unknown Items will remain unknown until the fight in Chozodia with Charlie.
+; 2. KnownItems - Obtaining Unknown Items will activate them on the spot.
+
+
 ;unkItemsasm:
 
 ;uncomment the instructions below if you use Biosparks unknown items patch and also activate fullsuit

@@ -1,3 +1,6 @@
+; Animate a fourth minimap color, (in ZM Improvement, the pink heated secret tiles) as well as assigning a slot in the minimap palette for the fourth color.
+
+
 ; fix initial colors for pause screen minimap
 .org 0x84113E4
 	.dh Color1,Color1

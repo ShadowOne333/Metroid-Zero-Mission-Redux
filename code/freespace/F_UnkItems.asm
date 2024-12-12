@@ -31,11 +31,11 @@ ChangeSuit:
 .else	; If KnownItems
 ; Changed code -- If full suit and not have Bigsuit = 0x30 (Gravity + Varia)
 	ldrb    r0,[r6,0xF]
-	mov	r1,BigSuit
+	mov 	r1,BigSuit
 	and     r0,r1
 	cmp     r0,r1
 	beq     @@Return
-	mov	r0,0h
+	mov 	r0,0h
 	strb    r0,[r6,0x12]
 .endif
 @@Return:
@@ -52,8 +52,8 @@ RestoreSuit:
 	bx      r14
 	.pool
 
-StatusScreen:
-	ldr	r0,=Equipment
+StatusScreen:	; 2 = Suitless, 1 = Full, 0 = Normal
+	ldr 	r0,=Equipment
 	ldrb    r2,[r0,0x12]
 	cmp     r2,2h
 	beq     @@Return		; return r2 = 2 if suitless
@@ -65,14 +65,13 @@ StatusScreen:
 	ldrb    r2,[r0,0xF]
 	mov     r1,BigSuit
 	and     r2,r1
-@@NoPower:
 	cmp     r2,0
 	beq     @@Return		; return r2 = 0 if no gravity
 	mov     r2,1			; return r2 = 1 if gravity 
-.else	; If UnkItems
+.else	; If KnownItems
 ; Changed code -- If have Bigsuit = 0x30 (Gravity + Varia)
 	ldrb    r2,[r0,0xF]
-	mov	r1,BigSuit
+	mov 	r1,BigSuit
 	and     r2,r1
 	cmp     r2,r1
 	bne     @@Return		; return r2 = 0 if not gravity + varia

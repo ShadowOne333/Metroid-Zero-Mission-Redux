@@ -17,7 +17,7 @@
 ;-------------------------------------
 ;		Main hacks
 ;-------------------------------------
-/* Credits for the different hacks:
+/* Credits for the different hacks (More credits in the ReadMe):
 A collective effort of yohann, somerando, biospark, captain glitch, raygun
 
 biospark- unknown items, starting room, scale end percent, 4th map color
@@ -46,13 +46,13 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .include "code/asm/BetterWallJump.asm"
 .include "code/asm/BreakBlocks.asm"
 ;.include "code/asm/ChargeHeal.asm"
+
 .include "code/asm/DessgeegaSidehopperFix.asm"
 .notice "Dessgeega Sidehopper Fix"
 
 ;.include "code/asm/EditWeapons.asm"
-
 .include "code/asm/FiveByThreeMap.asm"
-;.include "code/asm/Flare.asm"
+.include "code/asm/Flare.asm"		; Commented
 .include "code/asm/FlashyDoors.asm"
 .include "code/asm/FrozenWalljump.asm"
 .include "code/asm/HazardDamageSuit.asm"
@@ -83,17 +83,16 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .notice "Restore Samus Close Up"
 
 .include "code/asm/RShot.asm"
-
 .include "code/asm/ScaleEndPercent.asm"
 .include "code/asm/SetTimerValues.asm"
-;.include "code/asm/Shipthings.asm"
+;.include "code/asm/Shipthings.asm"	; Commented
+;.include "code/asm/SingleWaveBeamShot.asm"
 .include "code/asm/SMControls.asm"
 .include "code/asm/SMProjectiles.asm"
+.include "code/asm/SoundTestExpansion.asm"
 .include "code/asm/SparkSteering.asm"
 .include "code/asm/SpeedBall.asm"
-
 .include "code/asm/StartingRoom.asm"
-
 .include "code/asm/TractorBeam.asm"
 
 unkItemsasm:
@@ -104,10 +103,8 @@ unkItemsasm:
 	.include "code/asm/StartingItems.asm"
 .endif
 
-;.include "code/asm/UnlockKraid.asm"
-
+.include "code/asm/UnlockKraid.asm"	; Commented
 .include "code/asm/WeaponToggleOnDeath.asm"
-
 .include "code/asm/ZeroCharge.asm"
 
 ;-------------------------------------
@@ -119,22 +116,27 @@ unkItemsasm:
 ;	Optional hacks
 ;-------------------------------------
 
-;.include "optional/RemoveLowHealthAlarm.asm"
+;.include "code/optional/RemoveLowHealthAlarm.asm"
 .ifdef removeHealthAlarm
 	.notice "Optional: Low Health Alarm Removed"
 .endif
 
-;.include "optional/RemoveCloseup.asm"
+;.include "code/optional/RemoveCloseup.asm"
 .ifdef removeCloseup
 	.notice "Optional: Remove Samus Close Up"
 .endif
 
-;.include "optional/HideGalleryImages.asm"
+;.include "code/optional/HideGalleryImages.asm"
 .ifdef hideGalleryImages
 	.notice "Optional: Hide Back All Gallery Images"
 .endif
 
-.include "optional/PurpleGravitySuit.asm"
+;.include "code/optional/OriginalPistolCharge.asm"
+.ifdef originalPistolCharge
+	.notice "Optional: Original Pistol Charge"
+.endif
+
+.include "code/optional/PurpleGravitySuit.asm"
 .ifdef blueGravity
 	.notice "Optional: Purple Gravity Suit"
 .endif

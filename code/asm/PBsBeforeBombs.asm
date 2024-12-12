@@ -1,4 +1,5 @@
-;
+; This lets you use Power Bombs before obtaining Bombs, and prevents a softlock in the status screen for doing so.
+
 ; allow laying PBs before bombs
 .org 0x8008022
 	ldrb    r1,[r3,2]
@@ -26,7 +27,7 @@ LayBomb:
 
 ; check PBs if no bombs
 .org 0x80709F2
-    beq     0x8070A08
+	beq     0x8070A08
 .org 0x8070A02
 	b       0x8070A08
 .org 0x8070A24

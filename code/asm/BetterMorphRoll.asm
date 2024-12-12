@@ -1,4 +1,4 @@
-; Makes the morphball only do its "rolling" animation if the ball is moving
+; When you are in morph ball form, standing still pauses morph ball's animation.
 betterRollasm:
 
 .org 0x80075FE	; Moved from 75FA for Project ZM
