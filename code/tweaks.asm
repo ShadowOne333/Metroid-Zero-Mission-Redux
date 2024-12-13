@@ -96,9 +96,10 @@
 .org 0x829F9A4
 .byte 0 ; Frame 1. Default 2h
 
-; Press B to skip elevator/boss intro cutscenes. 	(somerando/yohann)
+; Press B to skip elevator/boss intro cutscenes. (somerando/yohann)
 .org 0x806136C
 	mov r0,r0
+
 ; Replace track of statue activation cutscene (use this in conjunction with the cutscene skip, or else the music loops!)
 .org 0x805CB14
 	mov r1,0Ah
@@ -185,8 +186,8 @@
 	b 80098CCh
 	
 ; Imago's Doors will Unlock As Soon As He Dies (captain glitch)
-;.org 0x8043178
-;	b 804318Ch
+.org 0x8043178
+	b 804318Ch
 
 ; Imago pseudo-screw softlock fix
 .org 0x80105F4
@@ -248,10 +249,10 @@
 ;	b 805812Ch
 	
 ; Samus will no longer glow when leaving morph ball mode
-;.org 0x800951E
-;	.byte 0x0
-;.org 0x8009572
-;	.byte 0x0
+.org 0x800951E
+	.byte 0x0
+.org 0x8009572
+	.byte 0x0
 
 ; Samus' Ship will no longer refill energy or ammunition (captain glitch)
 ;.org 0x8045132

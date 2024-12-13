@@ -79,6 +79,9 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .include "code/asm/PBsBeforeBombs.asm"
 .include "code/asm/PowerBombJump.asm"
 
+.include "code/asm/PurpleGravitySuit.asm"
+.notice "Purple Gravity Suit"
+
 .include "code/asm/RestoreCloseup.asm"
 .notice "Restore Samus Close Up"
 
@@ -99,7 +102,7 @@ unkItemsasm:
 ;knownItemsasm:
 .include "code/asm/UnkItems.asm"
 .ifdef knownItemsasm
-	.include "code/asm/PlasmaNerf.asm"
+	;.include "code/asm/PlasmaNerf.asm"
 	.include "code/asm/StartingItems.asm"
 .endif
 
@@ -121,9 +124,9 @@ unkItemsasm:
 	.notice "Optional: Low Health Alarm Removed"
 .endif
 
-;.include "code/optional/RemoveCloseup.asm"
-.ifdef removeCloseup
-	.notice "Optional: Remove Samus Close Up"
+;.include "code/optional/StartInBrinstar.asm"
+.ifdef startBrinstar
+	.notice "Optional: Start In Brinstar"
 .endif
 
 ;.include "code/optional/HideGalleryImages.asm"
@@ -136,9 +139,9 @@ unkItemsasm:
 	.notice "Optional: Original Pistol Charge"
 .endif
 
-.include "code/optional/PurpleGravitySuit.asm"
-.ifdef blueGravity
-	.notice "Optional: Purple Gravity Suit"
+;.include "code/optional/OriginalGravitySuit.asm"
+.ifdef pinkGravity
+	.notice "Optional: Original Gravity Suit"
 .endif
 
 ;-------------------------------------

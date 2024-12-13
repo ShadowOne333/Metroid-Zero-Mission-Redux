@@ -42,9 +42,11 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 * Doors now have a flashy/pulsating light to them.
 * More accurate In-Game clock (a second each 60 frames instead of 64 frames)
 * Gravity Suit no longer protects from heat, you should have Varia for that feature.
-* Zero Suit's pistol can now be charged, this replaces the pistol meter so that a full charge will be able to freeze the pirates now. This can be disabled to behave like in vanilla ZM via an optional patch.
+* Samus' Gravity Suit colour palette has been changed to better reflect her in-game images as well as to have a purple hue instead of pink, to closely match that of Super Metroid's Gravity Suit. This can be changed back to original with the "Original Gravity Suit" optional patch.
+* Zero Suit's pistol can now be charged, this replaces the pistol meter so that a full charge will be able to freeze the pirates now. This can be disabled to behave like in vanilla ZM via the optional "Original Pistol Charge" patch. NOTE: The boss that relies on the pistol needs a fully charged shot to activate its orbs!
 * Firing a Charged shot now also fires a muzzle flare, like in Fusion.
 * Expanded Sound Test so all tracks in the game can be listened to (by kiliwily).
+* Samus will automatically climb any single or double blocks when running to improve the flow of movement (LedgeVault by kiliwily).
 * Bunch of new QoL stuff, courtesy of the "Fundamentals" hack, which puts together a lot of hacks gathered over the years for Zero Mission, some of which are:
 	- Tractor Beam, to draw items towards Samus when charging the beam
 	- Faster Item Grab
@@ -60,6 +62,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 		- Kraid is now vulnerable to the Plasma Beam, since you can obtain it way earlier now with the "Known Items" hack patched in.
 		- Start With Items (Known Items)
 
+* New Game+ Item collection & timer is always on so players can keep track of all the items even on a new game.
 * Hard Mode, Time Attack, Main Gallery and Fusion Gallery are all unlocked from the start. The Main Gallery also has all 8 images right from the start (this can be changed back with the 'Hide All Gallery Images' optional patch).
 * An option to select either the original behaviour for the Chozo Items, where grabbing them keeps them disabled until you get to Chozodia's boss, or a second option that enables the items as soon as you get them, so you can grab the Space Jump, Plasma Beam and Gravity Suit before even getting to Chozodia and obtaining/cleanup the maps from more items, or just wreck havoc if you can get them early on.
 
@@ -68,10 +71,11 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 ## Optional patches
 
 1. **Disable Low Health Alarm** - Disables the alarm that you get when Samus is on low health.
-2. **Purple Gravity Suit** - Changes the Gravity Suit palette to be purple, similar to the Super Metroid one, instead of having a pink hue.
-3. **Hide All Gallery Images** - Locks back all 8 gallery images like in the original game, so the player can unlock them through the usual conditions.
-4. **Remove Closeup** - Removes the Closeup you get when first starting a new game. This patch is only added for preservation sake.
-5. **Start in Brinstar** - Changes the default starting location from Crateria's Landing Site to the normal starting room in Brinstar like in vanilla Zero Mission (This one restores the Samus Face Closeup as well).
+2. **Hide All Gallery Images** - Locks back all 8 gallery images like in the original game, so the player can unlock them through the usual conditions.
+3. **Remove Closeup** - Removes the Closeup you get when first starting a new game. This patch is only included for preservation sake, as it does nothing in Redux.
+4. **Start in Brinstar** - Changes the default starting location from Crateria's Landing Site to the normal starting room in Brinstar like in vanilla Zero Mission (This one restores the Samus Face Closeup as well).
+5. **Original Gravity Suit** - Changes the Gravity Suit palette to that of the original vanilla Zero Mission (pink hue).
+6. **Original Pistol Charge** - Changes the behaviour of Samus' pistol when in Zero Suit to behave like in vanilla Zero Mission.
 
 -------------------
 
@@ -80,9 +84,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 1. Reimplement the Introduction's closeup of Samus' face when starting the game (originally seen when starting in Brinstar. This was removed due to the starting location being changed to Crateria in Project ZM. Need to find a way to re-enable it and make it appear in Crateria with Crateria's palette.
 2. Pinpoint and change some of the game cutscenes with non-powered Varia Suit to show the big shoulders Varia Suit instead (for consistency).
 3. Fix the discrepancy of the cutscene after Charlie not showing up the fully powered suit when entering the Status Screen.
-4. Fix the 'Zero Charge' hack to allow for the full sound of the charge beam instead of cutting it out.
-5. Optional patch to start back in Brinstar like in original ZM.
-5. Possibly more optional patches.
+4. Possibly more optional patches.
 
 -------------------
 

@@ -43,8 +43,8 @@
 ;----------------
 ; skip giving players varia for free if they beat charlie and don't already have it
 .org 0x805CA36
-	mov r0,1
-	b   0x805CA52
+	mov r0,1	; ldr r0, [pc, #0x14]
+	b   0x805CA52	; ldrb r1, [r0, #0xE]
 
 ;.org 0x805CA1A ; skips setting events 0x13 (varia obtained) and 0x44 (varia skipped)
 	;b  0x805CA36

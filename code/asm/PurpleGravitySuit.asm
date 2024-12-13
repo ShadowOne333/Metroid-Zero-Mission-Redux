@@ -1,6 +1,6 @@
 ; [ZM_U] Change the Gravity Suit's palette to purple instead of pink
 
-blueGravity:
+purpleGravity:
 
 ; Default Gravity colours
 .org 0x82383C8	;0x82379E8
@@ -42,8 +42,6 @@ blueGravity:
 ;Default Gravity
 	;.word 0x2207,0x2408,0x57FF,0x3BE0,0x1EA4,0x01A0,0x56FF,0x4D9D
 	;.word 0x4891,0x3DEF,0x0108,0x0252,0x035B,0x195F,0x0078,0x0011
-
-
 
 ; Gallery images
 

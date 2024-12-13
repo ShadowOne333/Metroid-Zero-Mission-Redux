@@ -1,6 +1,6 @@
 ; This is used for hackers to Configure the area, door and music track you start the game at.
 
-startingRoomasm:
+startBrinstar:
 ; Debug tests for UnkItems
 ; Area 5, Door 38 = Normal landing site for Redux
 ; Area 0, Door 0 for vanilla Brinstar starting room
@@ -25,4 +25,32 @@ startingRoomasm:
 	b       0x8060FDA
 	.pool
 
-.include "code/optional/RestoreOriginalCloseup.asm"
+;-------------------------------------
+
+restoreOriginalCloseup:
+; Original code
+.org 0x806061C
+	ldr r4, [pc, #0xB0]
+	ldr r2, [pc, #0xB4]
+	mov r3, #0x80
+	lsl r3, r3, #6
+	mov r0, #0x10
+	str r0, [sp]
+
+; Original code
+.org 0x805F9A4
+	ldr r5, [pc, #0xB8]
+	ldr r2, [pc, #0xBC]
+	mov r6, #0xA0
+	
+; No sounds after landing ship in intro
+;118 = Just ship opening noise
+;36 = appearance
+ .org 0x8062E5C
+	.halfword 118h
+
+; Samus Closeup palette
+.org 0x8367924
+.incbin "code/optional/closeup/CloseupBGPalette.pal"
+;-------------------------------------
+
