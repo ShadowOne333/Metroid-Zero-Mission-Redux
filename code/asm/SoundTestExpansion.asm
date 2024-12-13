@@ -1,4 +1,4 @@
-.definelabel NumberOfTracks,0x30
+.definelabel NumberOfTracks,0x31
 
 .org 0x807ADC4
 	.word SoundIDs
@@ -65,13 +65,15 @@ SoundIDs:
 	.halfword 0x0017	;Before_Ruins_Test_Room_2 (36)
 	.halfword 0x0005	;Chozo_Statue_Hint (37)
 	.halfword 0x004E	;Ruins_Test_Battle* (38)
-	.halfword 0x0019	;Brinstar_Remix (39)
-	.halfword 0x004D	;Mecha_Ridley_Battle_2* (40)
-	.halfword 0x001A	;Escape_Succesful (41)
-	.halfword 0x001B	;Credits* (42)
-	.halfword 0x0036	;Loading_jingle (43)
-	.halfword 0x0037	;Getting_Item_Jingle (44)
-	.halfword 0x003A	;Getting_Tank_Jingle (45)
-	.halfword 0x0042	;Getting_Unknown_Item_Jingle (46)
-	.halfword 0x004A	;Getting_Fully_Powered_Suit (47)
-	.halfword 0x0053	;Game_Over (48)
+	.halfword 0x0013	;Getting_Fully_Powered_Suit_Cutscene (39)
+	.halfword 0x0019	;Brinstar_Remix (40)
+	.halfword 0x004D	;Mecha_Ridley_Battle_2* (41)
+	.halfword 0x001A	;Escape_Succesful (42)
+	.halfword 0x001B	;Credits* (43)
+	.halfword 0x0036	;Loading_jingle (44)
+	.halfword 0x0037	;Getting_Item_Jingle (45)
+	.halfword 0x003A	;Getting_Tank_Jingle (46)
+	.halfword 0x0042	;Getting_Unknown_Item_Jingle (47)
+	.halfword 0x004A	;Getting_Fully_Powered_Suit_Jingle (48)
+	.halfword 0x0053	;Game_Over (49)
+
