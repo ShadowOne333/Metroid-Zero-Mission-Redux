@@ -83,8 +83,8 @@ Return:
 .incbin "code/fundamentals/crateriaMapMessage.bin"
 .endarea
 
-.org 0x801b8f2
-.area 0x801b924-.
+.org 0x801B8F2
+.area 0x801B924-.
 	ldr r2,[r15,32h*4]	;currspritedata, use pool of another function
 	mov r1,2eh
 	ldrb r1,[r2,r1]

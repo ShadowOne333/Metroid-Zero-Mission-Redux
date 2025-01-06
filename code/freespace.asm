@@ -124,10 +124,10 @@
 ;-------------------------------------
 ; End of ROM area. Adjust as needed for your hacks.
 
-.org 0x87606EC
-	.word UnkItemText
-.org 0x87609EC
-	.word UnkAnalysis
+;.org 0x87606EC
+	;.word UnkItemText
+;.org 0x87609EC
+	;.word UnkAnalysis
 
 
 .org EndOfROM	; 0x87F8000
@@ -236,6 +236,11 @@
 	.ifdef singleWaveBeamasm
 		.include "code/freespace/F_SingleWaveBeamShot.asm"
 		.notice "Single Wave Beam Shot"
+	.endif
+
+	.ifdef soundTestExpansionasm
+		.include "code/freespace/F_SoundTestExpansion.asm"
+		.notice "Sound Test Expansion"
 	.endif
 
 ;-------------------------------------

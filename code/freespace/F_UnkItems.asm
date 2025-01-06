@@ -12,8 +12,6 @@ ChangeSuit:
 	ldr     r6,=Equipment
 	ldrb    r0,[r6,0x12]
 	push    r0
-	;cmp 	r0,1h
-	;bne	@@Return
 	cmp 	r0,2h		; Suitless Samus fix by HAMGER
 	beq 	@@Return	; branch if Suitless Samus
 .ifdef unkItemsasm	; Fix by kiliwily
