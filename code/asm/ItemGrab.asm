@@ -36,8 +36,8 @@ itemGrabasm:
 ;change pointer from SetPauseFlag to unused RAM
 ;.org 0x8055FA0	; This line causes rooms with water to show a graphical glitch after returning from the Pause menu
 	;.word	0x3000C22
-.org 0x8060FA4
-	.word	0x3000C22
+;.org 0x8060FA4	; This line causes Samus to not change to Zero Suit after defeating Mother Brain
+	;.word	0x3000C22
 .org 0x801BB10
 	.word	0x3000C22
 ;.org 0x8060F90	; This line causes the Charlie fight to reset
