@@ -1,3 +1,5 @@
+zeroPistolCharge:
+
 .org 0x804EECE		; Show charge animation for Zero Suit
 	nop
 
