@@ -20,6 +20,37 @@
 .org 0x854A942
 	.halfword 0x4D10
 
+
+; Back out of status screen by pressing START
+.org 0x8071830
+    .byte 0Ah
+
+; Back out of sleep screen by pressing START
+.org 0x8072064
+    .byte 0Ah
+    
+; Back out of world map screen by pressing START
+.org 0x806E1AA
+    .byte 0Bh
+
+; Press any button to close save station messages
+.org 0x801B9E8
+    mov r0,r1
+    nop
+
+
+; Fix ice clip glitch.
+.org 0x800FFB9
+	.byte 0xE0	; D8 -> E0
+
+
+; Fixes slow physics not being properly applied when grabbed by a metroid in a liquid
+.org 0x8007674
+	.byte 0x01	; 06 -> 01
+.org 0x8007678
+	.byte 0x00,0x00	; 04 E0 -> 00 00
+
+
 ; fix for area message corner not being flipped
 ; .org 0x82f8081
 ; .byte 0x10
