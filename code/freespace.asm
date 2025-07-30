@@ -169,6 +169,11 @@
 		.notice "Plasma Beam Nerfed"
 	.endif
 
+	.ifdef pressStartToSkipIntroasm
+		.include "code/freespace/F_PressStartToSkipIntro.asm"
+		.notice "Press Start To Skip Intro"	
+	.endif
+
 	.ifdef sparkSteeringasm
 		.include "code/freespace/F_SparkSteering.asm"
 		.notice "Spark Steering"

@@ -58,12 +58,9 @@
 
 ; Only activate previously obtained items after defeating Chozo Ghost/God of War/Spirit of the Mural
 .org 0x80600EC
-; D1 7B 20 20 -> 90 7B 00 E0
-	ldrb r0, [r2,0xE]
-	b    0x80600F2
-	;ldrb r1,[r2,0xE]
-	;strb r1,[r2,0xF]
-	;b    0x8060318	; skip check for SubSpriteData1.workVariable3 = 0x7 (RUINS_TEST_FIGHT_STAGE_STARTING_SUIT_ANIM)
+	ldrb r1,[r2,0xE]
+	strb r1,[r2,0xF]
+	b    0x8060318	; skip check for SubSpriteData1.workVariable3 = 0x7 (RUINS_TEST_FIGHT_STAGE_STARTING_SUIT_ANIM)
 
 ; don't change varia's map tile with full suit
 .org 0x806B212

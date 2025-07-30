@@ -15,34 +15,35 @@
 .org 0x807BAAE	; 09 D0 -> 00 00
 	mov r0,r0
 
-; fix wrong tile colour in Gallery Image #1
+; Fix wrong tile colour in Gallery Image #1
 ; 0x3D92 -> 0x4D10
 .org 0x854A942
 	.halfword 0x4D10
 
+; Bomb jump in liquids without gravity suit
+.org 0x8007956	; 1E D1 -> C0 46
+	nop
 
 ; Back out of status screen by pressing START
 .org 0x8071830
-    .byte 0Ah
+	.byte 0Ah
 
 ; Back out of sleep screen by pressing START
 .org 0x8072064
-    .byte 0Ah
+	.byte 0Ah
     
 ; Back out of world map screen by pressing START
 .org 0x806E1AA
-    .byte 0Bh
+	.byte 0Bh
 
 ; Press any button to close save station messages
 .org 0x801B9E8
-    mov r0,r1
-    nop
-
+	mov r0,r1
+	nop
 
 ; Fix ice clip glitch.
 .org 0x800FFB9
 	.byte 0xE0	; D8 -> E0
-
 
 ; Fixes slow physics not being properly applied when grabbed by a metroid in a liquid
 .org 0x8007674
@@ -50,6 +51,21 @@
 .org 0x8007678
 	.byte 0x00,0x00	; 04 E0 -> 00 00
 
+; trunaur's/MAGE's item toggle menu in Hex tweaks
+.org 0x800B4A0
+	.db 0x02	; 01 -> 02
+.org 0x800B4A3
+	.db 0xD0	; D1 -> D0
+.org 0x800B4AE
+	.db 0x53	; 2B -> 53
+.org 0x8071BB6
+	nop	; 30 D1 -> C0 46
+.org 0x8071BF1
+	.db 0xE0	; D0 -> E0
+.org 0x8071C34
+	nop	; 00 26 -> C0 46
+.org 0x8071D78
+	nop	; FF 27 -> C0 46
 
 ; fix for area message corner not being flipped
 ; .org 0x82f8081

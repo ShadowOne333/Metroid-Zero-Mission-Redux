@@ -78,6 +78,7 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .include "code/asm/NoBombJumpDown.asm"
 .include "code/asm/PBsBeforeBombs.asm"
 .include "code/asm/PowerBombJump.asm"
+;.include "code/asm/PressStartToSkipIntro.asm"	; Not needed since we already begin with Hard mode enabled?
 
 .include "code/asm/PurpleGravitySuit.asm"
 .notice "Purple Gravity Suit"
