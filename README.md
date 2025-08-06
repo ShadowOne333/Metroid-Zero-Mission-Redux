@@ -82,7 +82,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 
 1. Reimplement the Introduction's closeup of Samus' face when starting the game (originally seen when starting in Brinstar. This was removed due to the starting location being changed to Crateria in Project ZM. Need to find a way to re-enable it and make it appear in Crateria with Crateria's palette.
 2. Pinpoint and change some of the game cutscenes with non-powered Varia Suit to show the big shoulders Varia Suit instead (for consistency).
-3. Fix the discrepancy of the cutscene after Charlie not showing up the fully powered suit when entering the Status Screen.
+3. Fix the discrepancy of the cutscene after Charlie not showing up the fully powered suit when entering the Status Screen, and also fix the flash visuals being out of sync with its SFX.
 4. Zero Charge patch seems to disable shooting Samus' pistol when crawling. Needs a proper fix, until then it will remain as optional.
 5. Possibly more optional patches.
 
