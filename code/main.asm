@@ -86,6 +86,9 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .include "code/asm/RestoreCloseup.asm"
 .notice "Restore Samus Close Up"
 
+.include "code/ColorImprovement/RestoreMapPalette.asm"
+.notice "Restore Original Map Palettes"
+
 .include "code/asm/RShot.asm"
 .include "code/asm/ScaleEndPercent.asm"
 .include "code/asm/SetTimerValues.asm"

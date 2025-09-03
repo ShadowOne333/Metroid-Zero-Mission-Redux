@@ -87,6 +87,10 @@ Start()
 	#$flips -a "code/ProjectZM/ProjZM083.ips" "$mod_rom";
 	#$flips -a "code/ProjectZM/ProjZM083-UnkEnabled.ips" "$mod_rom";
 	echo
+	
+	echo "Patching 'Color Improvement' hack by 'Piggy Chan!'...";
+	$flips -a "code/ColorImprovement/Color Improvement v2.ips" "$mod_rom";
+	echo
 
 	echo "Beginning main assembly code compilation with Armips..."
 	if [ "$items" == "Redux" ]; then
