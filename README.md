@@ -148,6 +148,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 * **FelixWright / Ckosmick / zidj** - For his original "Project ZM" hack, which also served as inspiration for this hack, and for his help and support towards certain hacks and porting them. Also, for the Slow in liquids and More Map Station messages hacks, and for for all his help in several hacks, fixes and suggestions in the MAGConst Discord Server.
 * **biospark** - Customizable 4th minimap colour, Enable Unknown items, Power Bombs before Bombs, Fusion style R-Shooting. Item percentage scaling, Tractor beam, Mid-air ballsparking, Remove intro closeup, SM Item toggling, Adjustable starting room, 2-line text boxes.
 * **CaptGlitch** - Adjustable escape timers, Better Morph Ball rolling, SM Style controls, SM style item grabbing, Toggle missile select with R, Gravity Suit taking heat damage, Shinespark steering, Speedbooster in Morph Ball, unlocking of Kraid's doors, Tractor beam, Start with items.
+* **Piggy Chan!** - Color Improvement v2 hack for Zero Mission and Fusion.
 * **JumZhu.Diwa** - Walljumping with Space Jump tweak.
 * **Raygun** - Plasma Beam nerf, Super Metroid style projectiles, SM Controls, Colorful HUD, Charge beam flare, Tractor beam, Unknown items, Transparent map fix, Single Wave Beam shot, many tweaks.
 * **somerando (caauyjdp)** - Tractor beam, more map messages.
