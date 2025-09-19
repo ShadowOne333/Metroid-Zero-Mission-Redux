@@ -113,6 +113,11 @@ unkItemsasm:
 .include "code/asm/UnlockKraid.asm"	; Commented
 .include "code/asm/WeaponToggleOnDeath.asm"
 
+.include "code/asm/ZeroCharge.asm"
+.ifdef zeroPistolCharge
+	.notice "Zero Suit Pistol Charge"
+.endif
+
 ;-------------------------------------
 ;	Freespace Hijacks
 ;-------------------------------------
@@ -140,11 +145,6 @@ unkItemsasm:
 ;.include "code/optional/OriginalGravitySuit.asm"
 .ifdef pinkGravity
 	.notice "Optional: Original Gravity Suit"
-.endif
-
-;.include "code/optional/ZeroCharge.asm"
-.ifdef zeroPistolCharge
-	.notice "Optional: Zero Suit Pistol Charge"
 .endif
 
 ;-------------------------------------

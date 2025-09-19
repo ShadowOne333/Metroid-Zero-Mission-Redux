@@ -44,6 +44,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 * Gravity Suit no longer protects from heat, you should have Varia for that feature.
 * Samus' Gravity Suit colour palette has been changed to better reflect her in-game images as well as to have a purple hue instead of pink, to closely match that of Super Metroid's Gravity Suit. This can be changed back to original with the "Original Gravity Suit" optional patch.
 * Firing a Charged shot now also fires a muzzle flare, like in Fusion.
+* Change the behaviour of Samus' pistol when in Zero Suit to be able to charge the shot like a normal Beam Charge. NOTE: The boss that relies on the pistol needs a fully charged shot to activate its orbs.
 * Expanded Sound Test so all tracks in the game can be listened to (by kiliwily).
 * Samus will automatically climb any single or double blocks when running to improve the flow of movement (LedgeVault by kiliwily).
 * Bunch of new QoL stuff, courtesy of the "Fundamentals" hack, which puts together a lot of hacks gathered over the years for Zero Mission, some of which are:
@@ -74,7 +75,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 3. **Remove Closeup** - Removes the Closeup you get when first starting a new game. This patch is only included for preservation sake, as it does nothing in Redux.
 4. **Start in Brinstar** - Changes the default starting location from Crateria's Landing Site to the normal starting room in Brinstar like in vanilla Zero Mission (This one restores the Samus Face Closeup as well).
 5. **Original Gravity Suit** - Changes the Gravity Suit palette to that of the original vanilla Zero Mission (pink hue).
-6. **Zero Suit Pistol Charge** - Changes the behaviour of Samus' pistol when in Zero Suit to be able to charge the shot like a normal Beam Charge. NOTE: This patch has a bug that makes Samus unable to shot while crawling. Additionally, the boss that relies on the pistol needs a fully charged shot to activate its orbs.
+6. **Original Zero Suit Pistol Charge** - Changes back the behaviour of the Zero Suit Pistol so it auto-charges after a set amount of time, instead of having to press B to charge it as if it were a normal Charge Beam.
 
 -------------------
 
@@ -83,8 +84,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 1. Reimplement the Introduction's closeup of Samus' face when starting the game (originally seen when starting in Brinstar. This was removed due to the starting location being changed to Crateria in Project ZM. Need to find a way to re-enable it and make it appear in Crateria with Crateria's palette.
 2. Pinpoint and change some of the game cutscenes with non-powered Varia Suit to show the big shoulders Varia Suit instead (for consistency).
 3. Fix the discrepancy of the cutscene after Charlie not showing up the fully powered suit when entering the Status Screen, and also fix the flash visuals being out of sync with its SFX.
-4. Zero Charge patch seems to disable shooting Samus' pistol when crawling. Needs a proper fix, until then it will remain as optional.
-5. Possibly more optional patches.
+4. Possibly more optional patches...?
 
 -------------------
 
@@ -155,6 +155,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 * **yohann** - Tractor beam, Unknown items, more map messages.
 * **quote58** - Tractor beam, getting some asm to work.
 * **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit, LedgeVault and Sound Test Expansion hacks. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
+* **SpineShark** - Zero Charge hack fix for Samus not shooting a charged pistol shot when crouching.
 * **HAMGER** - Fixes for Suitless Samus with Unknown Items.
 * **Metroid Construction** for all the great resources, forums and help towards this hack.
 
