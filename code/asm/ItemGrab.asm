@@ -61,8 +61,8 @@ itemGrabasm:
 ; Additional options
 
 .ifdef knownItemsasm
-.org 0x801B8CC		; Play sound routine for abilities (Prevents music from cutting off)
-	bl PlaySound
+;.org 0x801B8CC		; Play sound routine for abilities (Prevents music from cutting off)
+	;bl PlaySound
 .org 0x801B886		; sound for unknown items
 	mov r0,0x37	; mov r0,0x3A
 .org 0x801B898		; sound for abilities
