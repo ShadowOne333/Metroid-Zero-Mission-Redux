@@ -42,7 +42,7 @@
 ; Obtaining Suit
 ;----------------
 ; skip giving players varia for free if they beat charlie and don't already have it
-.org 0x805CA36
+.org 0x805CA12	; Old code had 0x805CA36, fixed thanks to kiliwily
 	mov r0,1	; ldr r0, [pc, #0x14]
 	b   0x805CA52	; ldrb r1, [r0, #0xE]
 

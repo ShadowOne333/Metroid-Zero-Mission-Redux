@@ -5,7 +5,7 @@
 export	time=$(date +'%T %a %d/%b/%Y')
 export	armips=bin/armips
 export	flips=bin/flips
-export	file_base="Metroid Zero Mission Redux"
+export	file_base="MZM Redux"
 export  out_folder=out
 export	patches_folder=patches
 export  clean_rom=rom/MZM.gba
@@ -84,8 +84,6 @@ Start()
 	# Patch Project ZM Mod IPS for initialization
 	echo "Patching 'Project ZM Mod' hack...";
 	$flips -a "code/ProjectZM/PZM-Mod.ips" "$mod_rom";
-	#$flips -a "code/ProjectZM/ProjZM083.ips" "$mod_rom";
-	#$flips -a "code/ProjectZM/ProjZM083-UnkEnabled.ips" "$mod_rom";
 	echo
 	
 	echo "Patching 'Color Improvement' hack by 'Piggy Chan!'...";
@@ -121,7 +119,7 @@ Start()
 
 	# Create IPS
 	echo "Creating '$file_base.ips' patch...";
-	$flips -c -i "$clean_rom" "$patched_rom" "$patches_folder/$file_base.ips"
+	$flips -c -i "$clean_rom" "out/Metroid Zero Mission Redux.gba" "$patches_folder/$file_base.ips"
 
 
 #-------------------------------------------------------------
@@ -150,8 +148,13 @@ End()
 		rm $mod_rom
 	fi
 
-	#cp "patches/$file_base.ips" "patches/Metroid Zero Mission Redux.ips"
-	#rm "patches/$file_base.ips"
+	if [ "$items" == "UnkItems" ]; then
+		cp "patches/$file_base.ips" "patches/Metroid Zero Mission Redux (Known Items).ips"
+		rm "patches/$file_base.ips"
+	else
+		cp "patches/$file_base.ips" "patches/Metroid Zero Mission Redux.ips"
+		rm "patches/$file_base.ips"
+	fi
 
 	sleep 1
 	exit

@@ -102,8 +102,8 @@ o7 thank you friends. you are the reason cool stuff like this exists
 .include "code/asm/StartingRoom.asm"
 .include "code/asm/TractorBeam.asm"
 
-unkItemsasm:
-;knownItemsasm:
+;unkItemsasm:
+knownItemsasm:
 .include "code/asm/UnkItems.asm"
 .ifdef knownItemsasm
 	;.include "code/asm/PlasmaNerf.asm"

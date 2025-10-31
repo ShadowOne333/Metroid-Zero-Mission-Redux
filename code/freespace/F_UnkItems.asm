@@ -55,13 +55,23 @@ StatusScreen:	; 2 = Suitless, 1 = Full, 0 = Normal
 	ldrb    r2,[r0,0x12]
 	cmp     r2,2h
 	beq     @@Return		; return r2 = 2 if suitless
+
+	;Modification by SpineShark for proper Full Suit detection after Charlie fight
+	ldr     r1,=PauseScreenFlag
+	ldrb     r1,[r1]
+	cmp     r1,8 :: bne @@IsNot
+	; pause screen flag == 8 (=getting fully powered suit)
+	ldrb     r2,[r0,0xE]
+	b         @@Continue
+@@IsNot:
+	ldrb    r2,[r0,0xF]
+@@Continue:
+
 .ifdef unkItemsasm
 ; This part has issues with showing up non-full suit when deactivating Varia/Gravity
-; Look into Charlie's cutscene code to make it activate both Varia and Gravity to possibly fix this.
 	;cmp 	r2,1h
 	;beq 	@@Return		; Fix for FullSuit anim after Charlie is defeated
 ; Default code -- If have BigSuit = 0x10 for Varia, or 0x20 for Gravity
-	ldrb    r2,[r0,0xF]
 	mov     r1,BigSuit
 	and     r2,r1
 	cmp     r2,0
@@ -69,7 +79,6 @@ StatusScreen:	; 2 = Suitless, 1 = Full, 0 = Normal
 	mov     r2,1			; return r2 = 1 if gravity 
 .else	; If KnownItems
 ; Changed code -- If have Bigsuit = 0x30 (Gravity + Varia)
-	ldrb    r2,[r0,0xF]
 	mov 	r1,BigSuit
 	and     r2,r1
 	cmp     r2,r1

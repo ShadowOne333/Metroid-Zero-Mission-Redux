@@ -20,8 +20,9 @@ itemGrabasm:
 .org 0x8056020 ; set Y pos
 	mov r0,#0xC4	;Originally mov r0,#0x60
 	lsl r0,r0,#0x3	;Originally lsl r0,r0,#0x4
-.org 0x805FED0
-	b 0x8060318
+; Charlie fight Gravity flash and SFX fix by commenting out these lines, thanks to kiliwily
+;.org 0x805FED0
+	;b 0x8060318
 
 
 ; 2 - Line text boxes (biospark)
