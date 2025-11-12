@@ -82,8 +82,7 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 ## To-Do
 
 1. Reimplement the Introduction's closeup of Samus' face when starting the game (originally seen when starting in Brinstar. This was removed due to the starting location being changed to Crateria in Project ZM. Need to find a way to re-enable it and make it appear in Crateria with Crateria's palette.
-2. Pinpoint and change some of the game cutscenes with non-powered Varia Suit to show the big shoulders Varia Suit instead (for consistency).
-3. Possibly more optional patches...?
+2. Possibly more optional patches...?
 
 -------------------
 
@@ -151,7 +150,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 * **JumZhu.Diwa** - Walljumping with Space Jump tweak.
 * **Raygun** - Plasma Beam nerf, Super Metroid style projectiles, SM Controls, Colorful HUD, Charge beam flare, Tractor beam, Unknown items, Transparent map fix, Single Wave Beam shot, many tweaks.
 * **somerando (caauyjdp)** - Tractor beam, more map messages.
-* **yohann** - Tractor beam, Unknown items, more map messages.
+* **yohann** - Tractor beam, Unknown items, more map messages, and the specific cutscenes code for loading separate graphics for Samus in her Full Varia Suit for Mother Brain Close Up scene, Kraid Rising scene, Ridley Spawn scene and Tourian Escape scene.
 * **quote58** - Tractor beam, getting some asm to work.
 * **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit, LedgeVault and Sound Test Expansion hacks. Fix for the SFX and flash for Gravity suit being out of sync after Charlie fight. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
 * **SpineShark** - Zero Charge hack fix for Samus not shooting a charged pistol shot when crouching. Fix for Full Suit not showing on post-Charlie activation sequence 

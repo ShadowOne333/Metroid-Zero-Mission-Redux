@@ -248,6 +248,11 @@
 		.notice "Sound Test Expansion"
 	.endif
 
+	.ifdef cutscenesVariaasm
+		.include "code/cutscenes/F_Cutscenes_Varia.asm"
+		.notice "Full Suit Varia Cutscenes"
+	.endif
+
 ;-------------------------------------
 ;.org 0x8442D22		; Unknown Item
 UnkItemText:
