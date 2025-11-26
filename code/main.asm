@@ -48,6 +48,8 @@ o7 thank you friends. you are the reason cool stuff like this exists
 ;.include "code/asm/ChargeHeal.asm"
 
 .include "code/cutscenes/Cutscenes_Main.asm"
+.include "code/cutscenes/Cutscenes_Fixes.asm"
+.notice "Cutscenes GFX Fixes"
 
 .include "code/asm/DessgeegaSidehopperFix.asm"
 .notice "Dessgeega Sidehopper Fix"
