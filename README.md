@@ -75,7 +75,8 @@ https://github.com/ShadowOne333/Metroid-Zero-Mission-Redux
 3. **Remove Closeup** - Removes the Closeup you get when first starting a new game. This patch is only included for preservation sake, as it does nothing in Redux.
 4. **Start in Brinstar** - Changes the default starting location from Crateria's Landing Site to the normal starting room in Brinstar like in vanilla Zero Mission (This one restores the Samus Face Closeup as well).
 5. **Original Gravity Suit** - Changes the Gravity Suit palette to that of the original vanilla Zero Mission (pink hue).
-6. **Original Zero Suit Pistol Charge** - Changes back the behaviour of the Zero Suit Pistol so it auto-charges after a set amount of time, instead of having to press B to charge it as if it were a normal Charge Beam.
+6. **Original Room Transitions** - Restores the original timings for room transitions and doors.
+7. **Original Zero Suit Pistol Charge** - Changes back the behaviour of the Zero Suit Pistol so it auto-charges after a set amount of time, instead of having to press B to charge it as if it were a normal Charge Beam.
 
 -------------------
 
