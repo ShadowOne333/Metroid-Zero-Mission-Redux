@@ -1,8 +1,9 @@
+;-------------------------------------
 .org 0x807A118	; 01 D0 -> 00 00
 	mov r0,r0
 .org 0x807A048	; 00 -> 03 	; Unlock both time attack records
 	mov r3,3h
-
+;-------------------------------------
 .org 0x807A0A6	; 3A D0 -> 00 00	; Unlock gallery
 	mov r0,0h
 .org 0x807A0B0	; 3A D0 -> 00 00	; Golden Gallery text
@@ -14,24 +15,24 @@
 	mov r0,r0
 .org 0x807BAAE	; 09 D0 -> 00 00
 	mov r0,r0
-
+;-------------------------------------
 ; Fix wrong tile colour in Gallery Image #1
 ; 0x3D92 -> 0x4D10
 .org 0x854A942
 	.halfword 0x4D10
-
+;-------------------------------------
 ; Bomb jump in liquids without gravity suit
 .org 0x8007956	; 1E D1 -> C0 46
 	nop
-
+;-------------------------------------
 ; Back out of status screen by pressing START
 .org 0x8071830
 	.byte 0Ah
-
+;-------------------------------------
 ; Back out of sleep screen by pressing START
 .org 0x8072064
 	.byte 0Ah
-    
+;-------------------------------------
 ; Back out of world map screen by pressing START
 .org 0x806E1AA
 	.byte 0Bh
