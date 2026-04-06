@@ -249,10 +249,14 @@
 ;	.byte 0x2
 	
  .org 0x8062E5C ; No sounds after landing ship in intro
+;233 = Original intro text SFX
 ;118 = Just ship opening noise
-;36 = appearance
- 	.halfword 36h
-	
+;36 = Appearance jingle
+	.halfword 233h
+
+ .org 0x821971A ; Cut-off footsteps SFX on Gunship landing intro sequence
+	.byte 0xB1
+
 ; No chozo hints (Makes all statues sit)
 ;.org 0x8013E00
 ;	.halfword 0x4004

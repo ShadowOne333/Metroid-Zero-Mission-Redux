@@ -154,7 +154,7 @@ If you want to apply any of the optional patches, you can use each Optional patc
 * **yohann** - Tractor beam, Unknown items, more map messages, and the specific cutscenes code for loading separate graphics for Samus in her Full Varia Suit for Mother Brain Close Up scene, Kraid Rising scene, Ridley Spawn scene and Tourian Escape scene.
 * **quote58** - Tractor beam, getting some asm to work.
 * **kiliwily** - DessgeegaSidehopperFix, WeaponToggleOnDeath, HazardDamageSuit, LedgeVault and Sound Test Expansion hacks. Fix for the SFX and flash for Gravity suit being out of sync after Charlie fight. Also credits for his Full Suit and UnkItems specific fixes for Normal Redux.
-* **SpineShark** - Zero Charge hack fix for Samus not shooting a charged pistol shot when crouching. Fix for Full Suit not showing on post-Charlie activation sequence 
+* **SpineShark** - Zero Charge hack fix for Samus not shooting a charged pistol shot when crouching. Fix for Full Suit not showing on post-Charlie activation sequence. Starting Items with Fanfare code.
 * **HAMGER** - Fixes for Suitless Samus with Unknown Items.
 * **Metroid Construction** for all the great resources, forums and help towards this hack.
 
