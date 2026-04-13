@@ -254,9 +254,6 @@
 ;36 = Appearance jingle
 	.halfword 233h
 
- .org 0x821971A ; Cut-off footsteps SFX on Gunship landing intro sequence
-	.byte 0xB1
-
 ; No chozo hints (Makes all statues sit)
 ;.org 0x8013E00
 ;	.halfword 0x4004
