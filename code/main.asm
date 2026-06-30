@@ -109,8 +109,8 @@ o7 thank you friends. you are the reason cool stuff like this exists
 
 .include "code/asm/TractorBeam.asm"
 
-;unkItemsasm:
-knownItemsasm:
+unkItemsasm:
+;knownItemsasm:
 .include "code/asm/UnkItems.asm"
 .ifdef knownItemsasm
 	;.include "code/asm/PlasmaNerf.asm"
@@ -133,6 +133,11 @@ knownItemsasm:
 ;-------------------------------------
 ;	Optional hacks
 ;-------------------------------------
+
+;.include "code/optional/RemoveChozoHints.asm"
+.ifdef removeChozoHints
+	.notice "Optional: Chozo Hints Removed"
+.endif
 
 ;.include "code/optional/RemoveLowHealthAlarm.asm"
 .ifdef removeHealthAlarm
