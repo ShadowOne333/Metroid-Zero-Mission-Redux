@@ -1,4 +1,28 @@
 ;-------------------------------------
+; [ZM_U] Removes the half tile horizontal offset from Zeb, Zebbo, Gamet and Geega (the flying farmable/respawning enemies)
+
+.org 0x801C27C ; Zeb
+    nop
+
+.org 0x802F098 ; Zebbo
+    nop
+.org 0x802F1C0 ; Zebbo follower 1
+    nop
+.org 0x802f204 ; Zebbo follower 2
+    nop
+
+.org 0x802E654 ; Gamet
+    nop
+.org 0x802E77E ; Gamet follower 1
+    nop
+.org 0x802E7C2 ; Gamet follower 2
+    nop
+
+.org 0x8040274 ; Geega
+    nop
+.org 0x8040396 ; Geega follower
+    nop
+;-------------------------------------
 .org 0x807A118	; 01 D0 -> 00 00
 	mov r0,r0
 .org 0x807A048	; 00 -> 03 	; Unlock both time attack records
