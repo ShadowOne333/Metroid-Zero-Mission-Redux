@@ -73,7 +73,9 @@ o7 thank you friends. you are the reason cool stuff like this exists
 
 .include "code/asm/LedgeVault.asm"
 .include "code/asm/LowHealth.asm"
-.include "code/asm/MapFix.asm"
+;.include "code/asm/MapFix.asm"
+.include "code/asm/ZMU_MapDownloadFix.asm"
+.notice "Transparent Map Fix"
 
 .include "code/asm/MinimapColours.asm"
 .notice "Add a 4th Minimap Colour"
