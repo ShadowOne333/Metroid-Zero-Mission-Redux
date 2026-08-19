@@ -161,6 +161,12 @@ unkItemsasm:
 	.notice "Optional: Original Gravity Suit"
 .endif
 
+; Modify the Sample Rate of the music from 13kHz to 21Khz
+;.include "code/optional/SoundImprovement.asm"
+.ifdef soundImprovement
+	.notice "Optional: Sound Improvement"
+.endif
+
 ;-------------------------------------
 
 .notice "Done." 
