@@ -129,8 +129,8 @@ To play Metroid Zero Mission Redux, the following is required:
 
 	Metroid Zero Mission (USA).gba
 	No-Intro: Game Boy Advance (v. 20210227-023848)
-	File/ROM SHA-1: 5D21C668BAA84DA4A5B745BE56809BB277F947A3
-	File/ROM CRC32: 817A7E9E
+	File/ROM SHA-1: 5DE8536AFE1F0078EE6FE1089F890E8C7AA0A6E8
+	File/ROM CRC32: 5C61A844
 
 * [Floating IPS (FLIPS)](https://git.disroot.org/Sir_Walrus/Flips)
 * "Metroid Zero Mission Redux.ips" patch
