@@ -46,8 +46,9 @@ restoreOriginalCloseup:
 ; No sounds after landing ship in intro
 ;118 = Just ship opening noise
 ;36 = appearance
- .org 0x8062E5C
-	.halfword 118h
+;If you want to remove the footstep sounds before the fanfare, use this: 21971A: BD -> B1
+ .org 0x821971A ; Cut-off footsteps SFX on Gunship landing intro sequence
+	.byte 0xBD
 
 ; Samus Closeup palette
 .org 0x8367924
